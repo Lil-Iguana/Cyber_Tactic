@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dn52uptr8vtiu"]
+
+[ext_resource type="Texture2D" uid="uid://cnjjfxn6hrai3" path="res://art/background.png" id="1_57gal"]
+
+[node name="Battle" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.728822, 0.728822, 0.728822, 1)
+texture = ExtResource("1_57gal")
+centered = false
+metadata/_edit_lock_ = true
