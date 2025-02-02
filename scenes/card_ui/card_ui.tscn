@@ -1,6 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkoytblva6p7w"]
+[gd_scene load_steps=9 format=3 uid="uid://bkoytblva6p7w"]
 
 [ext_resource type="Theme" uid="uid://cao7y1u2su7i5" path="res://main_theme.tres" id="1_tb7kq"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_ui.gd" id="2_ouas3"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_state_machine.gd" id="3_gy1s3"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_states/card_base_state.gd" id="4_6bhyr"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_states/card_clicked_state.gd" id="5_84yxw"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_states/card_dragging_state.gd" id="6_xg6xp"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_states/card_released_state.gd" id="7_727hg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vvy2"]
 size = Vector2(25, 30)
@@ -16,6 +22,7 @@ offset_bottom = -114.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_tb7kq")
+script = ExtResource("2_ouas3")
 
 [node name="Color" type="ColorRect" parent="."]
 layout_mode = 1
@@ -45,3 +52,22 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DropPointDetector"]
 position = Vector2(12.5, 15)
 shape = SubResource("RectangleShape2D_1vvy2")
+
+[node name="CardStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_gy1s3")
+initial_state = NodePath("CardBaseState")
+
+[node name="CardBaseState" type="Node" parent="CardStateMachine"]
+script = ExtResource("4_6bhyr")
+
+[node name="CardClickedState" type="Node" parent="CardStateMachine"]
+script = ExtResource("5_84yxw")
+state = 1
+
+[node name="CardDraggingState" type="Node" parent="CardStateMachine"]
+script = ExtResource("6_xg6xp")
+state = 2
+
+[node name="CardReleasedState" type="Node" parent="CardStateMachine"]
+script = ExtResource("7_727hg")
+state = 4
