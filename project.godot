@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Card_RogueLike_Game_Undecided"
+config/name="Cyber Tactics"
 run/main_scene="res://scenes/battle/battle.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
