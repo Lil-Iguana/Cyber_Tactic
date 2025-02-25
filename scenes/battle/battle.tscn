@@ -1,9 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://dn52uptr8vtiu"]
 
 [ext_resource type="Texture2D" uid="uid://cnjjfxn6hrai3" path="res://art/background.png" id="1_obr54"]
+[ext_resource type="PackedScene" uid="uid://306utgcvnsbs" path="res://scenes/enemy/enemy.tscn" id="2_7kg7y"]
 [ext_resource type="Script" path="res://scenes/ui/hand.gd" id="2_dybx0"]
 [ext_resource type="PackedScene" uid="uid://bkoytblva6p7w" path="res://scenes/card_ui/card_ui.tscn" id="2_ipo66"]
-[ext_resource type="Texture2D" uid="uid://dyj4be52qja3j" path="res://icon.svg" id="2_yo3r4"]
+[ext_resource type="Resource" uid="uid://7gdgsqlr4amv" path="res://enemies_stats/virus/test_enemy.tres" id="3_a84ys"]
 [ext_resource type="PackedScene" uid="uid://b25jnn2o0ion1" path="res://scenes/player/player.tscn" id="3_arrrb"]
 [ext_resource type="PackedScene" uid="uid://neowwkxk87rp" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_jsmm7"]
 [ext_resource type="Resource" uid="uid://co6ar47di3crh" path="res://characters/warrior/warrior.tres" id="4_nhdv7"]
@@ -12,8 +13,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ubsi8"]
 size = Vector2(256, 100)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ylwbw"]
 
 [node name="Battle" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -32,16 +31,9 @@ position = Vector2(128, 50)
 shape = SubResource("RectangleShape2D_ubsi8")
 debug_color = Color(0, 0.6, 0.701961, 0.129412)
 
-[node name="Enemy" type="Area2D" parent="."]
-position = Vector2(208, 66)
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
-scale = Vector2(0.15625, 0.15625)
-texture = ExtResource("2_yo3r4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
-shape = SubResource("RectangleShape2D_ylwbw")
+[node name="Enemy" parent="." instance=ExtResource("2_7kg7y")]
+position = Vector2(204, 77)
+stats = ExtResource("3_a84ys")
 
 [node name="Player" parent="." instance=ExtResource("3_arrrb")]
 position = Vector2(54, 78)
