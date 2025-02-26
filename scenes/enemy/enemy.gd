@@ -9,7 +9,10 @@ const ARROW_OFFSET := 5
 @onready var arrow: Sprite2D = $Arrow
 @onready var stats_ui: StatsUI = $StatsUI as StatsUI
 
-
+func _ready() -> void:
+	await get_tree().create_timer(2).timeout
+	take_damage(5)
+	stats.block += 17
 
 func set_enemy_stats(value: Stats) -> void:
 	stats = value.create_instance()
