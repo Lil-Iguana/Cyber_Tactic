@@ -5,8 +5,9 @@ signal reparent_requested(which_card_ui: CardUI)
 
 @export var card: Card
 
-@onready var color: ColorRect = $Color
-@onready var state: Label = $State
+@onready var panel: Panel = $Panel
+@onready var cost: Label = $Cost
+@onready var icon: TextureRect = $Icon
 @onready var drop_point_detector: Area2D = $DropPointDetector
 @onready var card_state_machine: CardStateMachine = $CardStateMachine as CardStateMachine
 @onready var targets: Array[Node] = []
