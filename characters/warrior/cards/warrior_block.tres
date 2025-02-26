@@ -8,6 +8,6 @@ script = ExtResource("1_m6a8p")
 id = "warrior_block"
 type = 1
 target = 0
-cost = 0
+cost = 1
 icon = ExtResource("1_bd3y4")
 tooltip_text = ""
