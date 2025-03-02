@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dn52uptr8vtiu"]
+[gd_scene load_steps=15 format=3 uid="uid://dn52uptr8vtiu"]
 
 [ext_resource type="Texture2D" uid="uid://cnjjfxn6hrai3" path="res://art/background.png" id="1_obr54"]
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_tgtwy"]
@@ -9,8 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://neowwkxk87rp" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_jsmm7"]
 [ext_resource type="Resource" uid="uid://co6ar47di3crh" path="res://characters/warrior/warrior.tres" id="4_nhdv7"]
 [ext_resource type="Script" path="res://scenes/ui/battle_ui.gd" id="7_qbvxi"]
+[ext_resource type="Script" path="res://scenes/player/player_handler.gd" id="8_naovo"]
 [ext_resource type="PackedScene" uid="uid://bumjrmkb8nk51" path="res://scenes/ui/mana_ui.tscn" id="11_2bebn"]
 [ext_resource type="PackedScene" uid="uid://ookdkrpepxa2" path="res://scenes/ui/tooltip.tscn" id="12_1gfg2"]
+[ext_resource type="Theme" uid="uid://cao7y1u2su7i5" path="res://main_theme.tres" id="12_ml4cj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ubsi8"]
 size = Vector2(256, 100)
@@ -44,6 +46,10 @@ stats = ExtResource("4_nhdv7")
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("3_jsmm7")]
 
+[node name="PlayerHandler" type="Node" parent="." node_paths=PackedStringArray("hand")]
+script = ExtResource("8_naovo")
+hand = NodePath("../BattleUI/Hand")
+
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
 script = ExtResource("7_qbvxi")
 
@@ -67,3 +73,19 @@ char_stats = ExtResource("4_nhdv7")
 [node name="Tooltip" parent="BattleUI" instance=ExtResource("12_1gfg2")]
 offset_top = 5.0
 offset_bottom = 51.0
+
+[node name="EndTurnButton" type="Button" parent="BattleUI"]
+unique_name_in_owner = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -51.0
+offset_top = -21.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("12_ml4cj")
+text = "End Turn"
