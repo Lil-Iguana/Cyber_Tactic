@@ -23,3 +23,7 @@ signal player_hand_drawn
 signal player_hand_discarded
 @warning_ignore("unused_signal")
 signal player_turn_ended
+
+# Enemy related events
+@warning_ignore("unused_signal")
+signal enemy_action_completed(enemy: Enemy)

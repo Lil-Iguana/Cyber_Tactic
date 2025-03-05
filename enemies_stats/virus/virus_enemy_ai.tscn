@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://pi6b7mp1b2gx"]
+
+[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_wltji"]
+[ext_resource type="Script" path="res://enemies_stats/virus/virus_attack_action.gd" id="2_ybtl6"]
+[ext_resource type="Script" path="res://enemies_stats/virus/virus_block_action.gd" id="3_wxsdj"]
+[ext_resource type="Script" path="res://enemies_stats/virus/virus_mega_block_action.gd" id="4_2s2a2"]
+
+[node name="VirusEnemyAI" type="Node"]
+script = ExtResource("1_wltji")
+
+[node name="AttackAction" type="Node" parent="."]
+script = ExtResource("2_ybtl6")
+
+[node name="BlockAction" type="Node" parent="."]
+script = ExtResource("3_wxsdj")
+
+[node name="MegaBlockAction" type="Node" parent="."]
+script = ExtResource("4_2s2a2")
