@@ -11,12 +11,12 @@ offset_left = -20.0
 offset_right = 20.0
 offset_bottom = 14.0
 grow_horizontal = 2
-theme_override_constants/separation = 0
+theme_override_constants/separation = 1
 alignment = 1
 script = ExtResource("1_ufcgq")
 
 [node name="Icon" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(14, 14)
+custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 texture = ExtResource("1_5l5xd")
 expand_mode = 1
