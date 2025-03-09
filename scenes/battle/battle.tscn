@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dn52uptr8vtiu"]
+[gd_scene load_steps=19 format=3 uid="uid://dn52uptr8vtiu"]
 
 [ext_resource type="Texture2D" uid="uid://cnjjfxn6hrai3" path="res://art/background.png" id="1_obr54"]
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_tgtwy"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://ookdkrpepxa2" path="res://scenes/ui/tooltip.tscn" id="12_1gfg2"]
 [ext_resource type="Theme" uid="uid://cao7y1u2su7i5" path="res://main_theme.tres" id="12_ml4cj"]
 [ext_resource type="Script" path="res://scenes/ui/red_flash.gd" id="15_5dacn"]
+[ext_resource type="PackedScene" uid="uid://dnjdeotl4lhvh" path="res://scenes/ui/battle_over_panel.tscn" id="17_oth3w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ubsi8"]
 size = Vector2(256, 100)
@@ -113,3 +114,9 @@ color = Color(1, 0.443137, 0.443137, 0)
 [node name="Timer" type="Timer" parent="RedFlash"]
 wait_time = 0.1
 one_shot = true
+
+[node name="BattleOverLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="BattleOverPanel" parent="BattleOverLayer" instance=ExtResource("17_oth3w")]
+visible = false

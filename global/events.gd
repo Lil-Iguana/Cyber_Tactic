@@ -33,3 +33,7 @@ signal player_died
 signal enemy_action_completed(enemy: Enemy)
 @warning_ignore("unused_signal")
 signal enemy_turn_ended
+
+# Battle-related events
+@warning_ignore("unused_signal")
+signal battle_over_screen_requested(text: String, type: BattleOverPanel.Type)
