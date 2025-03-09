@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://daiht3oljvjoj"]
+
+[ext_resource type="Texture2D" uid="uid://dexe65qywimpe" path="res://art/CyberSword_attack.png" id="1_48yow"]
+[ext_resource type="Script" path="res://characters/warrior/cards/warrior_cybersword_attack.gd" id="2_cvsc0"]
+
+[resource]
+script = ExtResource("2_cvsc0")
+id = "warrior_cybersword_attack"
+type = 0
+target = 1
+cost = 1
+icon = ExtResource("1_48yow")
+tooltip_text = "[center]Deal [color=\"ff0000\"]6[/color] damage.[/center]"
