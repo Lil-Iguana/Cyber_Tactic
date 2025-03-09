@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dn52uptr8vtiu"]
+[gd_scene load_steps=20 format=3 uid="uid://dn52uptr8vtiu"]
 
 [ext_resource type="Texture2D" uid="uid://cnjjfxn6hrai3" path="res://art/background.png" id="1_obr54"]
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_tgtwy"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://scenes/enemy/enemy_handler.gd" id="4_pp0u0"]
 [ext_resource type="Resource" uid="uid://di1u2yn8ru2vi" path="res://enemies_stats/virus/virus_enemy.tres" id="5_bry55"]
 [ext_resource type="Script" path="res://scenes/ui/battle_ui.gd" id="7_qbvxi"]
+[ext_resource type="Resource" uid="uid://bdcc0k712cgou" path="res://enemies_stats/malware/malware_enemy.tres" id="8_kd15x"]
 [ext_resource type="Script" path="res://scenes/player/player_handler.gd" id="8_naovo"]
 [ext_resource type="PackedScene" uid="uid://bumjrmkb8nk51" path="res://scenes/ui/mana_ui.tscn" id="11_2bebn"]
 [ext_resource type="PackedScene" uid="uid://ookdkrpepxa2" path="res://scenes/ui/tooltip.tscn" id="12_1gfg2"]
@@ -44,9 +45,17 @@ debug_color = Color(0, 0.6, 0.701961, 0.129412)
 [node name="EnemyHandler" type="Node2D" parent="."]
 script = ExtResource("4_pp0u0")
 
-[node name="Enemy" parent="EnemyHandler" instance=ExtResource("2_7kg7y")]
-position = Vector2(204, 77)
+[node name="VirusEnemy" parent="EnemyHandler" instance=ExtResource("2_7kg7y")]
+position = Vector2(198, 77)
 stats = ExtResource("5_bry55")
+
+[node name="MalwareEnemy" parent="EnemyHandler" instance=ExtResource("2_7kg7y")]
+position = Vector2(158, 62)
+stats = ExtResource("8_kd15x")
+
+[node name="MalwareEnemy2" parent="EnemyHandler" instance=ExtResource("2_7kg7y")]
+position = Vector2(236, 62)
+stats = ExtResource("8_kd15x")
 
 [node name="Player" parent="." instance=ExtResource("3_arrrb")]
 position = Vector2(54, 78)
