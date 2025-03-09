@@ -45,13 +45,13 @@ debug_color = Color(0, 0.6, 0.701961, 0.129412)
 [node name="EnemyHandler" type="Node2D" parent="."]
 script = ExtResource("4_pp0u0")
 
-[node name="VirusEnemy" parent="EnemyHandler" instance=ExtResource("2_7kg7y")]
-position = Vector2(198, 77)
-stats = ExtResource("5_bry55")
-
 [node name="MalwareEnemy" parent="EnemyHandler" instance=ExtResource("2_7kg7y")]
 position = Vector2(158, 62)
 stats = ExtResource("8_kd15x")
+
+[node name="VirusEnemy" parent="EnemyHandler" instance=ExtResource("2_7kg7y")]
+position = Vector2(198, 77)
+stats = ExtResource("5_bry55")
 
 [node name="MalwareEnemy2" parent="EnemyHandler" instance=ExtResource("2_7kg7y")]
 position = Vector2(236, 62)
