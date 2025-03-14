@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bu3dhos1m15kj"]
+[gd_scene load_steps=5 format=3 uid="uid://bu3dhos1m15kj"]
+
+[ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_7m5q3"]
 
 [sub_resource type="Gradient" id="Gradient_d3fc5"]
 colors = PackedColorArray(0.0925943, 0.108696, 0.555451, 1, 0.225601, 0.34753, 1, 1)
@@ -19,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7m5q3")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -80,3 +83,7 @@ custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 text = "Exit
 "
+
+[connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/NewRun" to="." method="_on_new_run_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
