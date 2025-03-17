@@ -6,8 +6,12 @@
 
 [resource]
 script = ExtResource("1_px33x")
+character_name = "Warrior"
+description = "Normie."
+portrait = ExtResource("1_rgx6i")
 starting_deck = ExtResource("3_edb7b")
 cards_per_turn = 4
 max_mana = 3
 max_health = 35
 art = ExtResource("1_rgx6i")
+tooltip_text = ""
