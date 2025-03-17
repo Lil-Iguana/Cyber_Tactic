@@ -39,3 +39,25 @@ signal enemy_tooltip_requested(enemy: Stats)
 # Battle-related events
 @warning_ignore("unused_signal")
 signal battle_over_screen_requested(text: String, type: BattleOverPanel.Type)
+@warning_ignore("unused_signal")
+signal battle_won
+
+# Map-related events
+@warning_ignore("unused_signal")
+signal map_exited
+
+# Shop-related events
+@warning_ignore("unused_signal")
+signal shop_exited
+
+# Campfire-related events
+@warning_ignore("unused_signal")
+signal campfire_exited
+
+# Battle Reward-related events
+@warning_ignore("unused_signal")
+signal battle_reward_exited
+
+# Treasure Room-related events
+@warning_ignore("unused_signal")
+signal treasure_room_exited
