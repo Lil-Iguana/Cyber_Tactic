@@ -7,6 +7,7 @@ const CAMPFIRE_SCENE := preload("res://scenes/campfire/campfire.tscn")
 const MAP_SCENE := preload("res://scenes/map/map.tscn")
 const SHOP_SCENE := preload("res://scenes/shop/shop.tscn")
 const TREASURE_SCENE := preload("res://scenes/treasure/treasure.tscn")
+const BESTIARY_SCENE := preload("res://scenes/bestiary/bestiary.tscn")
 
 @onready var current_view: Node = $CurrentView
 @onready var battle_button: Button = %BattleButton
@@ -15,6 +16,7 @@ const TREASURE_SCENE := preload("res://scenes/treasure/treasure.tscn")
 @onready var rewards_button: Button = %RewardsButton
 @onready var shop_button: Button = %ShopButton
 @onready var treasure_button: Button = %TreasureButton
+@onready var bestiary_button: Button = %BestiaryButton
 
 var character: CharacterStats
 
@@ -47,6 +49,7 @@ func _setup_event_connections() -> void:
 	Events.map_exited.connect(_on_map_exited)
 	Events.shop_exited.connect(_change_view.bind(MAP_SCENE))
 	Events.treasure_room_exited.connect(_change_view.bind(MAP_SCENE))
+	Events.bestiary_exited.connect(_change_view.bind(MAP_SCENE))
 	
 	battle_button.pressed.connect(_change_view.bind(BATTLE_SCENE))
 	campfire_button.pressed.connect(_change_view.bind(CAMPFIRE_SCENE))
@@ -54,6 +57,7 @@ func _setup_event_connections() -> void:
 	rewards_button.pressed.connect(_change_view.bind(BATTLE_REWARD_SCENE))
 	shop_button.pressed.connect(_change_view.bind(SHOP_SCENE))
 	treasure_button.pressed.connect(_change_view.bind(TREASURE_SCENE))
+	bestiary_button.pressed.connect(_change_view.bind(BESTIARY_SCENE))
 
 
 func _on_map_exited() -> void:

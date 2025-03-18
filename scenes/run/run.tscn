@@ -44,3 +44,8 @@ text = "Rewards"
 unique_name_in_owner = true
 layout_mode = 2
 text = "Campfire"
+
+[node name="BestiaryButton" type="Button" parent="DebugButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Bestiary"

@@ -61,3 +61,7 @@ signal battle_reward_exited
 # Treasure Room-related events
 @warning_ignore("unused_signal")
 signal treasure_room_exited
+
+# Bestiary-related events
+@warning_ignore("unused_signal")
+signal bestiary_exited
