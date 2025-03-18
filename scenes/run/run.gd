@@ -9,7 +9,7 @@ const SHOP_SCENE := preload("res://scenes/shop/shop.tscn")
 const TREASURE_SCENE := preload("res://scenes/treasure/treasure.tscn")
 
 @onready var current_view: Node = $CurrentView
-@onready var battle_button: Button = $BattleButton
+@onready var battle_button: Button = %BattleButton
 @onready var campfire_button: Button = %CampfireButton
 @onready var map_button: Button = %MapButton
 @onready var rewards_button: Button = %RewardsButton
