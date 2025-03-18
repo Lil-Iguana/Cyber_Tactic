@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://istosvrl2ng1"]
+[gd_scene load_steps=3 format=3 uid="uid://istosvrl2ng1"]
 
 [ext_resource type="PackedScene" uid="uid://rsk8d12egnnf" path="res://scenes/ui/card_menu_ui.tscn" id="1_6kcv7"]
+[ext_resource type="Script" path="res://scenes/ui/card_tooltip_pop_up.gd" id="1_aur4j"]
 
 [node name="CardTooltipPopUp" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_aur4j")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -17,6 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 0.568627)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -44,6 +47,9 @@ layout_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+mouse_filter = 2
 bbcode_enabled = true
 text = "Card Description Card Description"
 fit_content = true
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
