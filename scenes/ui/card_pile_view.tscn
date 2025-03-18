@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://df1tufvp2h0o5"]
+[gd_scene load_steps=5 format=3 uid="uid://df1tufvp2h0o5"]
 
 [ext_resource type="PackedScene" uid="uid://rsk8d12egnnf" path="res://scenes/ui/card_menu_ui.tscn" id="1_1hl7i"]
+[ext_resource type="Script" path="res://scenes/ui/card_pile_view.gd" id="1_f0q4j"]
+[ext_resource type="PackedScene" uid="uid://istosvrl2ng1" path="res://scenes/ui/card_tooltip_pop_up.tscn" id="3_fg707"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_inlig"]
 font_size = 32
@@ -12,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_f0q4j")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -144,3 +147,8 @@ offset_bottom = 21.0
 grow_horizontal = 0
 text = "Back
 "
+
+[node name="CardTooltipPopUp" parent="." instance=ExtResource("3_fg707")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
