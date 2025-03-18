@@ -9,6 +9,8 @@ const SHOP_SCENE := preload("res://scenes/shop/shop.tscn")
 const TREASURE_SCENE := preload("res://scenes/treasure/treasure.tscn")
 const BESTIARY_SCENE := preload("res://scenes/bestiary/bestiary.tscn")
 
+@export var run_startup: RunStartup
+
 @onready var current_view: Node = $CurrentView
 @onready var battle_button: Button = %BattleButton
 @onready var campfire_button: Button = %CampfireButton
@@ -22,10 +24,15 @@ var character: CharacterStats
 
 
 func _ready() -> void:
-	if not character:
-		var warrior := load("res://characters/warrior/warrior.tres")
-		character = warrior.create_instance()
-		_start_run()
+	if not run_startup:
+		return
+		
+	match run_startup.type:
+		RunStartup.Type.NEW_RUN:
+			character = run_startup.picked_character.create_instance()
+			_start_run()
+		RunStartup.Type.CONTINUED_RUN:
+			print("TODO: load previous Run")
 
 
 func _start_run() -> void:
