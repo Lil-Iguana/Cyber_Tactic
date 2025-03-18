@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://3ryyux5dk14m"]
+[gd_scene load_steps=10 format=3 uid="uid://3ryyux5dk14m"]
 
 [ext_resource type="Script" path="res://scenes/ui/play_selector.gd" id="1_8ha05"]
 [ext_resource type="Texture2D" uid="uid://c65soght4j8py" path="res://art/tile_0087.png" id="2_1jh0v"]
+[ext_resource type="Resource" uid="uid://cj8wg6pkgahdr" path="res://scenes/run/run_startup.tres" id="2_osesr"]
 [ext_resource type="Texture2D" uid="uid://wy0km0q1cnv8" path="res://art/tile_0119.png" id="3_a4gkq"]
 
 [sub_resource type="Gradient" id="Gradient_d3fc5"]
@@ -31,6 +32,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8ha05")
+run_startup = ExtResource("2_osesr")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
