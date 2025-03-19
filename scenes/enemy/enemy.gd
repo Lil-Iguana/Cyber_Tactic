@@ -108,15 +108,13 @@ func _on_area_exited(_area: Area2D) -> void:
 
 
 func _ready() -> void:
-	# Connect mouse hover signals
-	connect("mouse_entered", Callable(self, "_on_mouse_entered"))
-	connect("mouse_exited", Callable(self, "_on_mouse_exited"))
+	connect("input_event", Callable(self, "_on_input_event"))
 
-func _on_mouse_entered() -> void:
-	if stats:
-		# Emit event with the enemy's art and tooltip text from stats
-		await get_tree().create_timer(0.5).timeout
-		Events.enemy_tooltip_requested.emit(stats.art, stats.tooltip_text)
 
-func _on_mouse_exited() -> void:
-	Events.tooltip_hide_requested.emit()
+func _on_input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == 2 and event.pressed:
+			if stats:
+				Events.enemy_tooltip_requested.emit(stats.art, stats.tooltip_text)
+		elif event.button_index == 2 and not event.pressed:
+			Events.tooltip_hide_requested.emit()
