@@ -8,6 +8,7 @@
 script = ExtResource("2_cvsc0")
 id = "warrior_cybersword_attack"
 type = 0
+rarity = 0
 target = 1
 cost = 1
 icon = ExtResource("1_48yow")
