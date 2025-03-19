@@ -13,3 +13,7 @@ card = ExtResource("2_l5fp0")
 
 [node name="Visuals" parent="." instance=ExtResource("3_bf7wh")]
 layout_mode = 2
+
+[connection signal="gui_input" from="Visuals" to="." method="_on_visuals_gui_input"]
+[connection signal="mouse_entered" from="Visuals" to="." method="_on_visuals_mouse_entered"]
+[connection signal="mouse_exited" from="Visuals" to="." method="_on_visuals_mouse_exited"]
