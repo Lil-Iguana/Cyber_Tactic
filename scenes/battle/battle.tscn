@@ -182,7 +182,7 @@ layer = 2
 visible = false
 
 [node name="CardPileViews" type="CanvasLayer" parent="."]
-layer = 3
+layer = 4
 
 [node name="DrawPileView" parent="CardPileViews" instance=ExtResource("22_ems6g")]
 unique_name_in_owner = true
