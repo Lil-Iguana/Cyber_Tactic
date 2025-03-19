@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://di04dbe481yuy"]
+[gd_scene load_steps=3 format=3 uid="uid://di04dbe481yuy"]
 
 [ext_resource type="Texture2D" uid="uid://1q6cgivkcya3" path="res://art/draw.png" id="1_l4cxb"]
+[ext_resource type="Texture2D" uid="uid://b0jtqk1ltht4" path="res://art/drawHover.png" id="2_juyxu"]
 
 [node name="CardPileOpener" type="TextureButton"]
 offset_right = 16.0
 offset_bottom = 16.0
 texture_normal = ExtResource("1_l4cxb")
+texture_hover = ExtResource("2_juyxu")
 ignore_texture_size = true
 stretch_mode = 5
