@@ -12,6 +12,7 @@ const BESTIARY_SCENE := preload("res://scenes/bestiary/bestiary.tscn")
 @export var run_startup: RunStartup
 
 @onready var current_view: Node = $CurrentView
+@onready var gold_ui: GoldUI = %GoldUI
 @onready var deck_button: CardPileOpener = %DeckButton
 @onready var deck_view: CardPileView = %DeckView
 
@@ -23,6 +24,7 @@ const BESTIARY_SCENE := preload("res://scenes/bestiary/bestiary.tscn")
 @onready var treasure_button: Button = %TreasureButton
 @onready var bestiary_button: Button = %BestiaryButton
 
+var stats: RunStats
 var character: CharacterStats
 
 
@@ -39,6 +41,8 @@ func _ready() -> void:
 
 
 func _start_run() -> void:
+	stats = RunStats.new()
+	
 	_setup_event_connections()
 	_setup_top_bar()
 	print("TODO: procedurally generate map")
@@ -72,6 +76,7 @@ func _setup_event_connections() -> void:
 
 
 func _setup_top_bar():
+	gold_ui.run_stats = stats
 	deck_button.card_pile = character.deck
 	deck_view.card_pile = character.deck
 	deck_button.pressed.connect(deck_view.show_current_view.bind("Deck"))
