@@ -28,6 +28,11 @@ func generate_map() -> Array[Array]:
 	map_data = _generate_initial_grid()
 	var starting_points := _get_random_starting_points()
 	
+	for j in starting_points:
+		var current_j := j
+		for i in FLOORS - 1:
+			current_j = _setup_connection(i, current_j)
+	
 	return []
 
 
@@ -72,3 +77,43 @@ func _get_random_starting_points() -> Array[int]:
 			y_coordinates.append(starting_point)
 		
 	return y_coordinates
+
+
+func _setup_connection(i: int, j: int) -> int:
+	var next_room: Room
+	var current_room := map_data[i][j] as Room
+	
+	@warning_ignore("unassigned_variable")
+	while not next_room or _would_cross_existing_path(i, j, next_room):
+		var random_j := clampi(randi_range(j - 1, j + 1), 0, MAP_WIDTH - 1)
+		next_room = map_data[i + 1][random_j]
+		
+	current_room.next_rooms.append(next_room)
+	
+	return next_room.column
+
+
+func _would_cross_existing_path(i: int, j: int, room: Room) -> bool:
+	var left_neighbour: Room
+	var right_neighbour: Room
+	
+	# if j == 0, there's no left neighbour
+	if j > 0:
+		left_neighbour = map_data[i][j - 1]
+	# if j == MAP_WIDTH - 1, there's no right neighbour
+	if j < MAP_WIDTH - 1:
+		right_neighbour = map_data[i][j + 1]
+	
+	# can't cross in right dir if right neighbour goes to left
+	if right_neighbour and room.column > j:
+		for next_room: Room in right_neighbour.next_rooms:
+			if next_room.column < room.column:
+				return true
+	
+	# can't cross in left dir if left neighbour goes to right
+	if left_neighbour and room.column < j:
+		for next_room: Room in left_neighbour.next_rooms:
+			if next_room.column > room.column:
+				return true
+	
+	return false
