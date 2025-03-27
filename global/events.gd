@@ -48,7 +48,7 @@ signal map_exited
 
 # Shop-related events
 @warning_ignore("unused_signal")
-signal shop_exited
+signal shop_exited(room: Room)
 
 # Campfire-related events
 @warning_ignore("unused_signal")
