@@ -43,6 +43,7 @@ func show_selected() -> void:
 
 
 
+@warning_ignore("unused_parameter")
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if not available or not event.is_action_pressed("left_mouse"):
 		return
