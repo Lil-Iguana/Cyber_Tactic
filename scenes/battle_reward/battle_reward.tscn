@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/battle_reward/battle_reward.gd" id="1_q0wnb"]
 [ext_resource type="Texture2D" uid="uid://cnjjfxn6hrai3" path="res://art/background.png" id="2_7ksok"]
 [ext_resource type="PackedScene" uid="uid://d1h161tcghnyh" path="res://scenes/ui/reward_button.tscn" id="3_08i2o"]
-[ext_resource type="Texture2D" uid="uid://cmjtk8eeo0p6r" path="res://art/gold.png" id="4_uisgo"]
+[ext_resource type="Texture2D" uid="uid://6q020fkp1i2g" path="res://art/Cache_Currency.png" id="4_y2jor"]
 [ext_resource type="Texture2D" uid="uid://dxjqjw61iqcea" path="res://art/rarity.png" id="5_y72du"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ykgm0"]
@@ -81,7 +81,7 @@ layout_mode = 2
 
 [node name="GoldReward" parent="VBoxContainer/RewardContainer/MarginContainer/Rewards" instance=ExtResource("3_08i2o")]
 layout_mode = 2
-reward_icon = ExtResource("4_uisgo")
+reward_icon = ExtResource("4_y2jor")
 reward_text = "127 gold"
 
 [node name="CardReward" parent="VBoxContainer/RewardContainer/MarginContainer/Rewards" instance=ExtResource("3_08i2o")]
