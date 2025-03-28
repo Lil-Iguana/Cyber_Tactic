@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6q020fkp1i2g"
-path="res://.godot/imported/Cache_Currency.png-3ec993a48e5dd560f51d362cac560855.ctex"
+uid="uid://vytb7q5g8iyr"
+path="res://.godot/imported/Cache.png-d36fe93b10e1e5429b8c02d3dcfe5ebd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Cache_Currency.png"
-dest_files=["res://.godot/imported/Cache_Currency.png-3ec993a48e5dd560f51d362cac560855.ctex"]
+source_file="res://art/Cache.png"
+dest_files=["res://.godot/imported/Cache.png-d36fe93b10e1e5429b8c02d3dcfe5ebd.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@ extends Control
 
 const CARD_REWARDS = preload("res://scenes/ui/card_rewards.tscn")
 const REWARD_BUTTON = preload("res://scenes/ui/reward_button.tscn")
-const GOLD_ICON := preload("res://art/Cache_Currency.png")
+const GOLD_ICON := preload("res://art/Cache.png")
 const GOLD_TEXT := "%s cache"
 const CARD_ICON := preload("res://art/rarity.png")
 const CARD_TEXT := "Add New Card"
