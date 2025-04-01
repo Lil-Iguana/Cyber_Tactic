@@ -12,6 +12,7 @@ const RARITY_COLORS := {
 }
 
 @export_group("Card Attributes")
+@export var name: String
 @export var id: String
 @export var type: Type
 @export var rarity: Rarity

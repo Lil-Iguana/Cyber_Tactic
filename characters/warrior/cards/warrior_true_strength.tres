@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("2_28i7c")
+name = "True Strength"
 id = "warrior_true_strength"
 type = 2
 rarity = 2

@@ -14,6 +14,8 @@ signal card_played(card: Card)
 @warning_ignore("unused_signal")
 signal card_tooltip_requested(card: Card)
 @warning_ignore("unused_signal")
+signal card_chosen(card: Card)
+@warning_ignore("unused_signal")
 signal tooltip_hide_requested
 
 # Player-related events

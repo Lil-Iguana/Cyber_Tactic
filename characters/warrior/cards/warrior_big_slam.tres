@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_o4fty")
+name = "Big Slam"
 id = "warrior_big_slam"
 type = 0
 rarity = 1

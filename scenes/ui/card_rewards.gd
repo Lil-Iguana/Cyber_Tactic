@@ -48,6 +48,7 @@ func _clear_rewards() -> void:
 func _show_tooltip(card: Card) -> void:
 	selected_card = card
 	card_tooltip_popup.show_tooltip(card)
+	card_tooltip_popup.choose_button.visible = false
 
 
 func set_rewards(new_cards: Array[Card]) -> void:

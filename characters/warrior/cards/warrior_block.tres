@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource("2_b1a5w")
+name = "Block"
 id = "warrior_block"
 type = 1
 rarity = 0

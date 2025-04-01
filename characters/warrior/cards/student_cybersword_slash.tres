@@ -6,12 +6,12 @@
 
 [resource]
 script = ExtResource("2_xcl6d")
+name = "Sword Slash"
 id = "student_cybersword_slash"
 type = 0
 rarity = 0
 target = 2
 cost = 2
 icon = ExtResource("1_rxkcs")
-tooltip_text = "[center][b]CyberSword Slash[/b][/center]
-[center]Targets [color=\"#FFFF00\"]all enemies[/color] enemy to deal [color=\"ff0000\"]4[/color] damage.[/center]"
+tooltip_text = "[center]Targets [color=\"#FFFF00\"]all enemies[/color] enemy to deal [color=\"ff0000\"]4[/color] damage.[/center]"
 sound = ExtResource("3_wxncg")
