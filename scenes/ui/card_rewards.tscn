@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bhuc3qfelrj6f"]
+[gd_scene load_steps=9 format=3 uid="uid://bhuc3qfelrj6f"]
 
 [ext_resource type="Script" path="res://scenes/ui/card_rewards.gd" id="1_jycrj"]
 [ext_resource type="PackedScene" uid="uid://rsk8d12egnnf" path="res://scenes/ui/card_menu_ui.tscn" id="1_u1hn7"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://kyu5l54a2ljg" path="res://characters/warrior/cards/student_cybersword_slash.tres" id="3_pfit7"]
 [ext_resource type="Resource" uid="uid://cavj5bacvpmrd" path="res://characters/warrior/cards/warrior_big_slam.tres" id="4_j87tl"]
 [ext_resource type="Resource" uid="uid://bl66ldjcrh1ii" path="res://characters/warrior/cards/warrior_true_strength.tres" id="5_5vnx4"]
+[ext_resource type="FontFile" uid="uid://7ucfniysa1ko" path="res://art/Font Styles/pixel_rpg.ttf" id="7_tigeo"]
 
 [node name="CardRewards" type="ColorRect"]
 anchors_preset = 15
@@ -49,9 +50,11 @@ layout_mode = 2
 
 [node name="SkipCardReward" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 19)
+custom_minimum_size = Vector2(35, 18)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("7_tigeo")
+theme_override_font_sizes/font_size = 6
 text = "Skip"
 
 [node name="CardTooltipPopUp" parent="." instance=ExtResource("2_db3cx")]

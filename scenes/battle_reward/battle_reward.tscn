@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cr6oeapjhsnjt"]
+[gd_scene load_steps=9 format=3 uid="uid://cr6oeapjhsnjt"]
 
 [ext_resource type="Script" path="res://scenes/battle_reward/battle_reward.gd" id="1_q0wnb"]
 [ext_resource type="Texture2D" uid="uid://cnjjfxn6hrai3" path="res://art/background.png" id="2_7ksok"]
 [ext_resource type="PackedScene" uid="uid://d1h161tcghnyh" path="res://scenes/ui/reward_button.tscn" id="3_08i2o"]
 [ext_resource type="Texture2D" uid="uid://vytb7q5g8iyr" path="res://art/Cache.png" id="4_isejm"]
 [ext_resource type="Texture2D" uid="uid://dxjqjw61iqcea" path="res://art/rarity.png" id="5_y72du"]
+[ext_resource type="FontFile" uid="uid://7ucfniysa1ko" path="res://art/Font Styles/pixel_rpg.ttf" id="6_sfqgb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ykgm0"]
 font_size = 32
@@ -93,6 +94,8 @@ reward_text = "Add New Card"
 custom_minimum_size = Vector2(50, 14)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("6_sfqgb")
+theme_override_font_sizes/font_size = 6
 text = "Continue
 "
 
