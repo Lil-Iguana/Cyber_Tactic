@@ -1,8 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://mpnkn13856x1"]
+[gd_scene load_steps=17 format=3 uid="uid://mpnkn13856x1"]
 
 [ext_resource type="Script" path="res://scenes/campfire/campfire.gd" id="1_wduac"]
 [ext_resource type="FontFile" uid="uid://bojuhq17w6srl" path="res://art/Font Styles/m3x6.ttf" id="2_1nk4i"]
-[ext_resource type="Resource" uid="uid://co6ar47di3crh" path="res://characters/warrior/warrior.tres" id="2_ipmj8"]
 [ext_resource type="Texture2D" uid="uid://uqdfrrdigtec" path="res://art/line.png" id="2_yyc03"]
 [ext_resource type="FontFile" uid="uid://7ucfniysa1ko" path="res://art/Font Styles/pixel_rpg.ttf" id="3_igcod"]
 [ext_resource type="PackedScene" uid="uid://df1tufvp2h0o5" path="res://scenes/ui/card_pile_view.tscn" id="5_cj7qx"]
@@ -53,6 +52,33 @@ color_ramp = SubResource("GradientTexture1D_ccnj2")
 font = ExtResource("2_1nk4i")
 font_size = 32
 
+[sub_resource type="Animation" id="Animation_4h8fk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParticlesLayer/GPUParticles2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UILayer/UI:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_vi5ju"]
 resource_name = "fade_out"
 tracks/0/type = "value"
@@ -94,33 +120,6 @@ tracks/2/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_4h8fk"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ParticlesLayer/GPUParticles2D:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("UILayer/UI:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_omvee"]
 _data = {
 "RESET": SubResource("Animation_4h8fk"),
@@ -136,7 +135,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_wduac")
-char_stats = ExtResource("2_ipmj8")
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = 0
