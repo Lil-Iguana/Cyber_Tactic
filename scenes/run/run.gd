@@ -12,6 +12,7 @@ const BESTIARY_SCENE := preload("res://scenes/bestiary/bestiary.tscn")
 
 @onready var map: Map = $Map
 @onready var current_view: Node = $CurrentView
+@onready var health_ui: HealthUI = %HealthUI
 @onready var gold_ui: GoldUI = %GoldUI
 @onready var deck_button: CardPileOpener = %DeckButton
 @onready var deck_view: CardPileView = %DeckView
@@ -45,6 +46,7 @@ func _start_run() -> void:
 	
 	_setup_event_connections()
 	_setup_top_bar()
+	
 	map.generate_new_map()
 	map.unlock_floor(0)
 
@@ -88,6 +90,8 @@ func _setup_event_connections() -> void:
 
 
 func _setup_top_bar():
+	character.stats_changed.connect(health_ui.update_stats.bind(character))
+	health_ui.update_stats(character)
 	gold_ui.run_stats = stats
 	deck_button.card_pile = character.deck
 	deck_view.card_pile = character.deck

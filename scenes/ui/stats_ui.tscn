@@ -3,7 +3,6 @@
 [ext_resource type="Theme" uid="uid://cao7y1u2su7i5" path="res://main_theme.tres" id="1_57rat"]
 [ext_resource type="Texture2D" uid="uid://p0yqsrixsboc" path="res://art/tile_0102.png" id="2_ghfqv"]
 [ext_resource type="Script" path="res://scenes/ui/stats_ui.gd" id="2_mm03n"]
-[ext_resource type="Texture2D" uid="uid://ra3deudpmllj" path="res://art/heart.png" id="4_1euyk"]
 [ext_resource type="Texture2D" uid="uid://cmpefot7ccsg5" path="res://art/animatedSprites/ShieldIcons/ShieldIconV2P4-Sheet.png" id="4_vmk4i"]
 [ext_resource type="Texture2D" uid="uid://ch2rcj17q4js2" path="res://art/animatedSprites/ShieldIcons/ShieldIconV2P5-Sheet.png" id="5_wicuj"]
 [ext_resource type="Texture2D" uid="uid://c13ton16r6my8" path="res://art/animatedSprites/ShieldIcons/ShieldIconV2P6-Sheet.png" id="6_77vqp"]
@@ -13,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bjt5tyiakqgck" path="res://art/animatedSprites/ShieldIcons/ShieldIconV2P1-Sheet.png" id="10_ofyjk"]
 [ext_resource type="Texture2D" uid="uid://c0o6lrnupojm5" path="res://art/animatedSprites/ShieldIcons/ShieldIconV2P2-Sheet.png" id="11_m1ixe"]
 [ext_resource type="Texture2D" uid="uid://c71vc5xaej1l0" path="res://art/animatedSprites/ShieldIcons/ShieldIconV2P3-Sheet.png" id="12_fvqgd"]
+[ext_resource type="PackedScene" uid="uid://cb6e701xyfirv" path="res://scenes/ui/health_ui.tscn" id="13_dq7in"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_q23uh"]
 frames = 16
@@ -79,20 +79,5 @@ text = "6"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Health" type="HBoxContainer" parent="."]
+[node name="Health" parent="." instance=ExtResource("13_dq7in")]
 layout_mode = 2
-theme_override_constants/separation = 1
-
-[node name="HealthImage" type="TextureRect" parent="Health"]
-layout_mode = 2
-texture = ExtResource("4_1euyk")
-stretch_mode = 5
-
-[node name="HealthLabel" type="Label" parent="Health"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 1
-text = "4
-"
-horizontal_alignment = 1
-vertical_alignment = 1
