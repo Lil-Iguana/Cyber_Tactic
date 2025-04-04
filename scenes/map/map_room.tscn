@@ -96,7 +96,7 @@ script = ExtResource("1_044g4")
 
 [node name="Line2D" type="Line2D" parent="Visuals"]
 modulate = Color(1, 1, 1, 0)
-points = PackedVector2Array(-8, 10, 8, 10, 8, -8, -8, -8)
+points = PackedVector2Array(0, -10, 5, -9, 8, -6, 10, -2, 10, 1, 9, 5, 7, 7, 4, 9, 0, 10, -4, 9, -7, 7, -9, 5, -10, 2, -10, -2, -9, -5, -7, -7, -5, -9, -2, -10)
 closed = true
 width = 2.0
 
