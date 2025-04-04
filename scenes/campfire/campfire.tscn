@@ -224,6 +224,7 @@ in your deck"
 horizontal_alignment = 1
 
 [node name="DeckViewLayer" type="CanvasLayer" parent="."]
+layer = 5
 
 [node name="DeckView" parent="DeckViewLayer" instance=ExtResource("5_cj7qx")]
 unique_name_in_owner = true
