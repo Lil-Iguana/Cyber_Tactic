@@ -6,10 +6,12 @@ signal status_changed
 
 enum Type {START_OF_TURN, END_OF_TURN, EVENT_BASED}
 enum StackType {NONE, INTENSITY, DURATION}
+enum EffectType {DEBUFF, BUFF}
 
 @export_group("Status Data")
 @export var id: String
 @export var type: Type
+@export var effect_type: EffectType
 @export var stack_type: StackType
 @export var can_expire: bool
 @export var duration: int : set = set_duration
@@ -41,3 +43,4 @@ func set_duration(new_duration: int) -> void:
 func set_stacks(new_stacks: int) -> void:
 	stacks = new_stacks
 	status_changed.emit()
+ 
