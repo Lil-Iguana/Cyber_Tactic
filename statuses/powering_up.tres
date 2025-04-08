@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="Status" load_steps=3 format=3 uid="uid://cbw1pr3xjnk8n"]
+[gd_resource type="Resource" script_class="PoweringUpStatus" load_steps=3 format=3 uid="uid://cbw1pr3xjnk8n"]
 
-[ext_resource type="Script" path="res://custom_resources/status.gd" id="1_26brj"]
 [ext_resource type="Texture2D" uid="uid://pgnrffkpyidd" path="res://art/tile_0127.png" id="1_e3rdm"]
+[ext_resource type="Script" path="res://statuses/powering_up.gd" id="2_sx1pq"]
 
 [resource]
-script = ExtResource("1_26brj")
+script = ExtResource("2_sx1pq")
 id = "powering_up"
 type = 0
 effect_type = 1
