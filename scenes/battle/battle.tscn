@@ -67,8 +67,9 @@ stats = ExtResource("4_nhdv7")
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("3_jsmm7")]
 
-[node name="PlayerHandler" type="Node" parent="." node_paths=PackedStringArray("hand")]
+[node name="PlayerHandler" type="Node" parent="." node_paths=PackedStringArray("player", "hand")]
 script = ExtResource("8_naovo")
+player = NodePath("../Player")
 hand = NodePath("../BattleUI/Hand")
 
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
