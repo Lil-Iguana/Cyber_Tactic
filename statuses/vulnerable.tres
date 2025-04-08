@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="Status" load_steps=3 format=3 uid="uid://dj8xnen1xfq5"]
+[gd_resource type="Resource" script_class="VulnerableStatus" load_steps=3 format=3 uid="uid://dj8xnen1xfq5"]
 
-[ext_resource type="Script" path="res://custom_resources/status.gd" id="1_i3p4x"]
 [ext_resource type="Texture2D" uid="uid://bs0qd6rr0gix7" path="res://art/expose.png" id="1_mh8tp"]
+[ext_resource type="Script" path="res://statuses/vulnerable.gd" id="2_memtb"]
 
 [resource]
-script = ExtResource("1_i3p4x")
+script = ExtResource("2_memtb")
 id = "vulnerable"
 type = 0
 effect_type = 0
