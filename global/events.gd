@@ -36,6 +36,8 @@ signal enemy_action_completed(enemy: Enemy)
 @warning_ignore("unused_signal")
 signal enemy_turn_ended
 @warning_ignore("unused_signal")
+signal enemy_died(enemy: Enemy)
+@warning_ignore("unused_signal")
 signal enemy_tooltip_requested(enemy: Stats)
 
 # Battle-related events
