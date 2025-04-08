@@ -111,6 +111,7 @@ func _on_area_exited(_area: Area2D) -> void:
 
 func _ready() -> void:
 	connect("input_event", Callable(self, "_on_input_event"))
+	status_handler.status_owner = self
 
 
 func _on_input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
