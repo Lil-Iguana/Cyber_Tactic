@@ -35,10 +35,10 @@ offset_top = -26.0
 offset_bottom = -10.0
 
 [node name="StatusHandler" parent="." node_paths=PackedStringArray("status_owner") instance=ExtResource("6_2wmxv")]
-offset_left = -34.0
-offset_top = 21.0
-offset_right = -34.0
-offset_bottom = 21.0
+offset_left = -25.0
+offset_top = 23.0
+offset_right = -25.0
+offset_bottom = 23.0
 status_owner = NodePath("..")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
