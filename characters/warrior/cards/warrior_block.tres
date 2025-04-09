@@ -12,6 +12,7 @@ type = 1
 rarity = 0
 target = 0
 cost = 1
+remove = false
 icon = ExtResource("1_bd3y4")
 tooltip_text = "[center]Gain [color=\"0044ff\"]5[/color] block.[/center]"
 sound = ExtResource("3_6dpdd")
