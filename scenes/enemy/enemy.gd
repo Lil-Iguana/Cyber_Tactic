@@ -11,6 +11,7 @@ const WHITE_SPRITE_MATERIAL := preload("res://art/white_sprite_material.tres")
 @onready var stats_ui: StatsUI = $StatsUI
 @onready var intent_ui: IntentUI = $IntentUI
 @onready var status_handler: StatusHandler = $StatusHandler
+@onready var modifier_handler: ModifierHandler = $ModifierHandler
 
 var enemy_action_picker: EnemyActionPicker
 var current_action: EnemyAction : set = set_current_action
@@ -99,6 +100,11 @@ func take_damage(damage: int) -> void:
 				Events.enemy_died.emit(self)
 				queue_free()
 	)
+
+
+func gain_block(block: int, which_modifier: Modifier.Type) -> void:
+	var modified_block := modifier_handler.get_modified_value(block, which_modifier)
+	stats.block += modified_block
 
 
 func _on_area_entered(_area: Area2D) -> void:

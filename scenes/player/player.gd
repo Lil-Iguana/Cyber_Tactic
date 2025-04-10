@@ -38,6 +38,12 @@ func update_stats() -> void:
 	stats_ui.update_stats(stats)
 
 
+func gain_block(block: int, which_modifier: Modifier.Type) -> void:
+	var modified_block := modifier_handler.get_modified_value(block, which_modifier)
+	stats.block += modified_block
+	Events.player_gain_block.emit()
+
+
 func take_damage(damage: int) -> void:
 	if stats.health <= 0:
 		return
