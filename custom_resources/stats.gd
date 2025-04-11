@@ -30,6 +30,12 @@ func take_damage(damage : int) -> void:
 	health -= damage
 
 
+func take_pure_damage(damage: int) -> void:
+	if damage <= 0:
+		return
+	health -= damage
+
+
 func heal(amount: int) -> void:
 	health += amount
 

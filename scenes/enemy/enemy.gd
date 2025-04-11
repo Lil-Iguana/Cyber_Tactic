@@ -102,6 +102,27 @@ func take_damage(damage: int) -> void:
 	)
 
 
+func take_pure_damage(damage: int) -> void:
+	if stats.health <= 0:
+		return
+	
+	sprite_2d.material = WHITE_SPRITE_MATERIAL
+	
+	var tween := create_tween()
+	tween.tween_callback(Shaker.shake.bind(self, 16, 0.15))
+	tween.tween_callback(stats.take_pure_damage.bind(damage))
+	tween.tween_interval(0.17)
+	
+	tween.finished.connect(
+		func():
+			sprite_2d.material = null
+			
+			if stats.health <= 0:
+				Events.enemy_died.emit(self)
+				queue_free()
+	)
+
+
 func gain_block(block: int, which_modifier: Modifier.Type) -> void:
 	var modified_block := modifier_handler.get_modified_value(block, which_modifier)
 	stats.block += modified_block
