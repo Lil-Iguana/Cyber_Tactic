@@ -7,6 +7,6 @@
 [resource]
 script = ExtResource("1_00qpd")
 ai = ExtResource("1_lem3m")
-max_health = 10
+max_health = 25
 art = ExtResource("1_41ff6")
 tooltip_text = "Virus"
