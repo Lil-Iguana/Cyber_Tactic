@@ -10,12 +10,12 @@ func initialize_status(target: Node) -> void:
 	var dmg_taken_modifier: Modifier = target.modifier_handler.get_modifier(Modifier.Type.DMG_TAKEN)
 	assert(dmg_taken_modifier, "No dmg_taken_modifier on %s" % target)
 	
-	var vulnerbale_modifier_value := dmg_taken_modifier.get_value("vulnerbale")
+	var vulnerable_modifier_value := dmg_taken_modifier.get_value("vulnerable")
 	
-	if not vulnerbale_modifier_value:
-		vulnerbale_modifier_value = ModifierValue.create_new_modifier("vulnerbale", ModifierValue.Type.PERCENT_BASED)
-		vulnerbale_modifier_value.percent_value = MODIFIER
-		dmg_taken_modifier.add_new_value(vulnerbale_modifier_value)
+	if not vulnerable_modifier_value:
+		vulnerable_modifier_value = ModifierValue.create_new_modifier("vulnerable", ModifierValue.Type.PERCENT_BASED)
+		vulnerable_modifier_value.percent_value = MODIFIER
+		dmg_taken_modifier.add_new_value(vulnerable_modifier_value)
 	
 	if not status_changed.is_connected(_on_status_changed):
 		status_changed.connect(_on_status_changed.bind(dmg_taken_modifier))
