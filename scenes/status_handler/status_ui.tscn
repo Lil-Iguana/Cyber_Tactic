@@ -17,6 +17,7 @@ font_color = Color(0.470158, 0.998568, 0.53073, 1)
 [node name="StatusUI" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+mouse_filter = 2
 script = ExtResource("1_6mlwl")
 
 [node name="Icon" type="TextureRect" parent="."]
