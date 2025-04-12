@@ -13,4 +13,4 @@ can_expire = false
 duration = 0
 stacks = 2
 icon = ExtResource("1_lgfja")
-tooltip = "TODO"
+tooltip = "Power Up: attacks deal %s more damage."

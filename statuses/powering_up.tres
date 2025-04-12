@@ -13,4 +13,4 @@ can_expire = false
 duration = 0
 stacks = 0
 icon = ExtResource("1_e3rdm")
-tooltip = "TODO"
+tooltip = "Powering Up: At the end of turn, gain 2 Power Up"
