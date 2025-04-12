@@ -14,5 +14,5 @@ target = 2
 cost = 2
 remove = false
 icon = ExtResource("1_rxkcs")
-tooltip_text = "[center]Targets [color=\"#FFFF00\"]all enemies[/color] enemy to deal [color=\"ff0000\"]4[/color] damage.[/center]"
+tooltip_text = "[center]Targets [color=\"#FFFF00\"]all enemies[/color] enemy to deal [color=\"ff0000\"]%s[/color] damage.[/center]"
 sound = ExtResource("3_wxncg")
