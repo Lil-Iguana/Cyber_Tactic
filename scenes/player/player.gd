@@ -13,6 +13,9 @@ const WHITE_SPRITE_MATERIAL := preload("res://art/white_sprite_material.tres")
 
 func _ready() -> void:
 	status_handler.status_owner = self
+	var vulnerable := preload("res://statuses/vulnerable.tres").duplicate()
+	vulnerable.duration = 3
+	status_handler.add_status(vulnerable)
 
 
 func set_character_stats(value: CharacterStats) -> void:
