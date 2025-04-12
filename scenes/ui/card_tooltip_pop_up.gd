@@ -29,7 +29,7 @@ func show_tooltip(card: Card, _is_choice: bool = false) -> void:
 	new_card.tooltip_requested.connect(hide_tooltip.unbind(1))
 	card_name.text = card.name
 	card_type.text = "(" + Card.Type.keys()[card.type].capitalize() + ")"
-	card_description.text = card.tooltip_text
+	card_description.text = card.get_default_tooltip()
 	current_card = card
 	choose_button.visible = _is_choice
 	show()
