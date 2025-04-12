@@ -47,6 +47,8 @@ signal enemy_tooltip_requested(enemy: Stats)
 signal battle_over_screen_requested(text: String, type: BattleOverPanel.Type)
 @warning_ignore("unused_signal")
 signal battle_won
+@warning_ignore("unused_signal")
+signal status_tooltip_requested(statuses: Array[Status])
 
 # Map-related events
 @warning_ignore("unused_signal")
