@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Threads" load_steps=2 format=3 uid="uid://be1v2k3crwac2"]
+
+[ext_resource type="Script" path="res://custom_resources/threads.gd" id="1_mv000"]
+
+[resource]
+script = ExtResource("1_mv000")
+thread_name = "Break Time"
+id = "break_time"
+type = 3
+character_type = 2
+starter_thread = true
+tooltip = "[color=\\\"ffdf00\\\"]Break Time[/color]
+At the end of combat, heal 6 HP."
