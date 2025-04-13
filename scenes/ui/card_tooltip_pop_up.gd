@@ -9,6 +9,7 @@ const CARD_MENU_UI_SCENE := preload("res://scenes/ui/card_menu_ui.tscn")
 @onready var tooltip_card: CenterContainer = %TooltipCard
 @onready var card_name = %CardName
 @onready var card_type = %CardType
+@onready var rarity_type = %RarityType
 @onready var card_description: RichTextLabel = %CardDescription
 @onready var choose_button: Button = %ChooseButton
 
@@ -29,6 +30,7 @@ func show_tooltip(card: Card, _is_choice: bool = false) -> void:
 	new_card.tooltip_requested.connect(hide_tooltip.unbind(1))
 	card_name.text = card.name
 	card_type.text = "(" + Card.Type.keys()[card.type].capitalize() + ")"
+	rarity_type.text = "(" + Card.Rarity.keys()[card.rarity].capitalize() + ")"
 	card_description.text = card.get_default_tooltip()
 	current_card = card
 	choose_button.visible = _is_choice
