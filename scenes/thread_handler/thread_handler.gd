@@ -7,11 +7,11 @@ const THREAD_APPLY_INTERVAL := 0.5
 const THREAD_UI = preload("res://scenes/thread_handler/thread_ui.tscn")
 
 @onready var threads_control: ThreadsControl = $ThreadsControl
-@onready var threads: HBoxContainer = %ThreadsHold
+@onready var threads_hold: HBoxContainer = %ThreadsHold
 
 
 func _ready() -> void:
-	threads.child_exiting_tree.connect(_on_threads_child_exiting_tree)
+	threads_hold.child_exiting_tree.connect(_on_threads_child_exiting_tree)
 	add_thread(preload("res://threads/kabluey.tres"))
 	await get_tree().create_timer(2.0).timeout
 	add_thread(preload("res://threads/extra_energy.tres"))
@@ -49,13 +49,13 @@ func add_thread(thread: ThreadPassive) -> void:
 		return
 	
 	var new_thread_ui := THREAD_UI.instantiate() as ThreadUI
-	threads.add_child(new_thread_ui)
+	threads_hold.add_child(new_thread_ui)
 	new_thread_ui.thread_passive = thread
 	new_thread_ui.thread_passive.initialize_thread(new_thread_ui)
 
 
 func has_thread(id: String) -> bool:
-	for thread_ui: ThreadUI in threads.get_children():
+	for thread_ui: ThreadUI in threads_hold.get_children():
 		if thread_ui.thread_passive.id == id and is_instance_valid(thread_ui):
 			return true
 
@@ -74,7 +74,7 @@ func get_all_threads() -> Array[ThreadPassive]:
 
 func _get_all_thread_ui_nodes() -> Array[ThreadUI]:
 	var all_threads: Array[ThreadUI] = []
-	for thread_ui: ThreadUI in threads.get_children():
+	for thread_ui: ThreadUI in threads_hold.get_children():
 		all_threads.append(thread_ui)
 		
 	return all_threads
