@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cusrqvpni62dv"]
+[gd_scene load_steps=6 format=3 uid="uid://cusrqvpni62dv"]
 
+[ext_resource type="Script" path="res://scenes/thread_handler/thread_handler.gd" id="1_2bgop"]
 [ext_resource type="Texture2D" uid="uid://dtmj57ks6bmxo" path="res://art/arrow_small.png" id="1_v60l0"]
 [ext_resource type="Texture2D" uid="uid://l8auqkvj28y5" path="res://art/arrow_small_disabled.png" id="2_a26ud"]
 [ext_resource type="Script" path="res://scenes/thread_handler/threads_control.gd" id="3_l5tbk"]
@@ -8,6 +9,7 @@
 [node name="ThreadHandler" type="HBoxContainer"]
 offset_right = 120.0
 offset_bottom = 16.0
+script = ExtResource("1_2bgop")
 
 [node name="LeftButton" type="TextureButton" parent="."]
 unique_name_in_owner = true

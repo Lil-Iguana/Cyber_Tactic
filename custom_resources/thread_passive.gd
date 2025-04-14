@@ -1,4 +1,4 @@
-class_name Threads
+class_name ThreadPassive
 extends Resource
 
 enum Type {START_OF_TURN, START_OF_COMBAT, END_OF_TURN, END_OF_COMBAT, EVENT_BASED}

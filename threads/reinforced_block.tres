@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Threads" load_steps=2 format=3 uid="uid://casfqs13f4r7m"]
 
-[ext_resource type="Script" path="res://custom_resources/threads.gd" id="1_hxcd8"]
+[ext_resource type="Script" path="res://custom_resources/thread_passive.gd" id="1_hxcd8"]
 
 [resource]
 script = ExtResource("1_hxcd8")

@@ -2,18 +2,18 @@ class_name ThreadUI
 extends Control
 
 
-@export var threads: Threads : set = set_thread
+@export var thread_passive: ThreadPassive : set = set_thread_passive
 
 @onready var icon: TextureRect = $Icon
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
-func set_thread(new_thread: Threads) -> void:
+func set_thread_passive(new_thread_passive: ThreadPassive) -> void:
 	if not is_node_ready():
 		await ready
 	
-	threads = new_thread
-	icon.texture = threads.icon
+	thread_passive = new_thread_passive
+	icon.texture = thread_passive.icon
 
 
 func flash() -> void:
