@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c65soght4j8py" path="res://art/tile_0087.png" id="1_rgx6i"]
 [ext_resource type="Resource" uid="uid://ceybpc07sti3p" path="res://characters/warrior/warrior_draftable_cards.tres" id="2_57hcw"]
 [ext_resource type="Resource" uid="uid://cowpt7h8htwl" path="res://characters/warrior/warrior_starting_deck.tres" id="3_edb7b"]
-[ext_resource type="Resource" uid="uid://be1v2k3crwac2" path="res://threads/break_time.tres" id="5_it263"]
+[ext_resource type="Resource" uid="uid://barqhdrh22oly" path="res://threads/break_time.tres" id="5_it263"]
 
 [resource]
 script = ExtResource("1_px33x")

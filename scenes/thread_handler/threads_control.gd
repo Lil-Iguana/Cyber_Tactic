@@ -7,7 +7,7 @@ const TWEEN_SCROLL_DURATION := 0.2
 @export var left_button: = TextureButton
 @export var right_button: = TextureButton
 
-@onready var threads: HBoxContainer = %Threads
+@onready var threads: HBoxContainer = %ThreadsHold
 @onready var page_width = self.custom_minimum_size.x
 
 var num_of_threads := 0

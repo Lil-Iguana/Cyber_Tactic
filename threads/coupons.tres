@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Threads" load_steps=2 format=3 uid="uid://cmm7u2mx1a1y3"]
+[gd_resource type="Resource" script_class="ThreadPassive" load_steps=3 format=3 uid="uid://hmap8l86svk1"]
 
 [ext_resource type="Script" path="res://custom_resources/thread_passive.gd" id="1_aq8e7"]
+[ext_resource type="Texture2D" uid="uid://njncvtqmx2eb" path="res://art/relic_coupons.png" id="1_g3klo"]
 
 [resource]
 script = ExtResource("1_aq8e7")
@@ -9,5 +10,6 @@ id = "coupons"
 type = 4
 character_type = 0
 starter_thread = false
+icon = ExtResource("1_g3klo")
 tooltip = "[color=\"ffdf00\"]Coupons[/color]
 All items in the shop are discounted by 50%."

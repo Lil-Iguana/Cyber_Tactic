@@ -30,7 +30,7 @@ script = ExtResource("3_l5tbk")
 left_button = NodePath("../LeftButton")
 right_button = NodePath("../RightButton")
 
-[node name="Threads" type="HBoxContainer" parent="ThreadsControl"]
+[node name="ThreadsHold" type="HBoxContainer" parent="ThreadsControl"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(88, 16)
 layout_mode = 0
@@ -38,40 +38,40 @@ offset_right = 236.0
 offset_bottom = 16.0
 theme_override_constants/separation = 2
 
-[node name="ThreadUI" parent="ThreadsControl/Threads" instance=ExtResource("4_00t72")]
+[node name="ThreadUI" parent="ThreadsControl/ThreadsHold" instance=ExtResource("4_00t72")]
 layout_mode = 2
 
-[node name="ThreadUI2" parent="ThreadsControl/Threads" instance=ExtResource("4_00t72")]
+[node name="ThreadUI2" parent="ThreadsControl/ThreadsHold" instance=ExtResource("4_00t72")]
 layout_mode = 2
 
-[node name="ThreadUI3" parent="ThreadsControl/Threads" instance=ExtResource("4_00t72")]
+[node name="ThreadUI3" parent="ThreadsControl/ThreadsHold" instance=ExtResource("4_00t72")]
 layout_mode = 2
 
-[node name="ThreadUI4" parent="ThreadsControl/Threads" instance=ExtResource("4_00t72")]
+[node name="ThreadUI4" parent="ThreadsControl/ThreadsHold" instance=ExtResource("4_00t72")]
 layout_mode = 2
 
-[node name="ThreadUI5" parent="ThreadsControl/Threads" instance=ExtResource("4_00t72")]
+[node name="ThreadUI5" parent="ThreadsControl/ThreadsHold" instance=ExtResource("4_00t72")]
 layout_mode = 2
 
-[node name="ThreadUI6" parent="ThreadsControl/Threads" instance=ExtResource("4_00t72")]
+[node name="ThreadUI6" parent="ThreadsControl/ThreadsHold" instance=ExtResource("4_00t72")]
 layout_mode = 2
 
-[node name="ThreadUI7" parent="ThreadsControl/Threads" instance=ExtResource("4_00t72")]
+[node name="ThreadUI7" parent="ThreadsControl/ThreadsHold" instance=ExtResource("4_00t72")]
 layout_mode = 2
 
-[node name="ThreadUI8" parent="ThreadsControl/Threads" instance=ExtResource("4_00t72")]
+[node name="ThreadUI8" parent="ThreadsControl/ThreadsHold" instance=ExtResource("4_00t72")]
 layout_mode = 2
 
-[node name="ThreadUI9" parent="ThreadsControl/Threads" instance=ExtResource("4_00t72")]
+[node name="ThreadUI9" parent="ThreadsControl/ThreadsHold" instance=ExtResource("4_00t72")]
 layout_mode = 2
 
-[node name="ThreadUI10" parent="ThreadsControl/Threads" instance=ExtResource("4_00t72")]
+[node name="ThreadUI10" parent="ThreadsControl/ThreadsHold" instance=ExtResource("4_00t72")]
 layout_mode = 2
 
-[node name="ThreadUI11" parent="ThreadsControl/Threads" instance=ExtResource("4_00t72")]
+[node name="ThreadUI11" parent="ThreadsControl/ThreadsHold" instance=ExtResource("4_00t72")]
 layout_mode = 2
 
-[node name="ThreadUI12" parent="ThreadsControl/Threads" instance=ExtResource("4_00t72")]
+[node name="ThreadUI12" parent="ThreadsControl/ThreadsHold" instance=ExtResource("4_00t72")]
 layout_mode = 2
 
 [node name="RightButton" type="TextureButton" parent="."]

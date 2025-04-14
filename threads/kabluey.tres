@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Threads" load_steps=2 format=3 uid="uid://cjic68unfui1c"]
+[gd_resource type="Resource" script_class="ThreadPassive" load_steps=3 format=3 uid="uid://cwxlm3oyg546w"]
 
 [ext_resource type="Script" path="res://custom_resources/thread_passive.gd" id="1_52wpo"]
+[ext_resource type="Texture2D" uid="uid://hmpqosvuxwib" path="res://art/tile_0107.png" id="1_qlntc"]
 
 [resource]
 script = ExtResource("1_52wpo")
@@ -9,5 +10,6 @@ id = "kabluey"
 type = 0
 character_type = 0
 starter_thread = false
+icon = ExtResource("1_qlntc")
 tooltip = "[color=\\\"ffdf00\\\"]Kabluey[/color]
 At the start of your turn, deal 2 damage to all enemies."
