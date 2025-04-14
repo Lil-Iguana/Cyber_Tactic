@@ -12,11 +12,6 @@ const THREAD_UI = preload("res://scenes/thread_handler/thread_ui.tscn")
 
 func _ready() -> void:
 	threads_hold.child_exiting_tree.connect(_on_threads_child_exiting_tree)
-	add_thread(preload("res://threads/kabluey.tres"))
-	await get_tree().create_timer(2.0).timeout
-	add_thread(preload("res://threads/extra_energy.tres"))
-	await get_tree().create_timer(2.0).timeout
-	add_thread(preload("res://threads/kabluey.tres"))
 
 
 func activate_threads_by_type(type: ThreadPassive.Type) -> void:
