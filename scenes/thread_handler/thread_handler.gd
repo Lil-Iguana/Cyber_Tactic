@@ -56,9 +56,9 @@ func add_thread(thread: ThreadPassive) -> void:
 
 func has_thread(id: String) -> bool:
 	for thread_ui: ThreadUI in threads_hold.get_children():
-		if thread_ui.thread_passive.id == id and is_instance_valid(thread_ui):
+		if is_instance_valid(thread_ui) and thread_ui.thread_passive and thread_ui.thread_passive.id == id:
 			return true
-
+	
 	return false
 
 
