@@ -12,6 +12,11 @@ const THREAD_UI = preload("res://scenes/thread_handler/thread_ui.tscn")
 
 func _ready() -> void:
 	threads_hold.child_exiting_tree.connect(_on_threads_child_exiting_tree)
+	add_thread(preload("res://threads/break_time.tres"))
+	await get_tree().create_timer(2.0).timeout
+	add_thread(preload("res://threads/reinforced_block.tres"))
+	await get_tree().create_timer(2.0).timeout
+	add_thread(preload("res://threads/break_time.tres"))
 
 
 func activate_threads_by_type(type: ThreadPassive.Type) -> void:
@@ -51,7 +56,7 @@ func add_thread(thread: ThreadPassive) -> void:
 
 func has_thread(id: String) -> bool:
 	for thread_ui: ThreadUI in threads_hold.get_children():
-		if is_instance_valid(thread_ui) and thread_ui.thread_passive and thread_ui.thread_passive.id == id:
+		if is_instance_valid(thread_ui) and thread_ui.thread_passive.id == id:
 			return true
 	
 	return false
