@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="ThreadPassive" load_steps=3 format=3 uid="uid://c014g8rpo2k1t"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c014g8rpo2k1t"]
 
 [ext_resource type="Texture2D" uid="uid://cds6dtdll7g04" path="res://art/megablock.png" id="1_dfjth"]
-[ext_resource type="Script" path="res://custom_resources/thread_passive.gd" id="1_hxcd8"]
+[ext_resource type="Script" path="res://threads/reinforced_block.gd" id="2_52ls8"]
 
 [resource]
-script = ExtResource("1_hxcd8")
+script = ExtResource("2_52ls8")
+block_bonus = 3
 thread_name = "Reinforced Block"
 id = "reinforced_block"
 type = 2
