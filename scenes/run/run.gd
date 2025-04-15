@@ -104,6 +104,7 @@ func _on_battle_room_entered(room: Room) -> void:
 	var battle_scene: Battle = _change_view(BATTLE_SCENE) as Battle
 	battle_scene.char_stats = character
 	battle_scene.battle_stats = room.battle_stats
+	battle_scene.threads = thread_handler
 	battle_scene.start_battle()
 
 
