@@ -70,6 +70,10 @@ signal battle_reward_exited
 @warning_ignore("unused_signal")
 signal treasure_room_exited
 
+# Thread-related events
+@warning_ignore("unused_signal")
+signal thread_tooltip_requested(thread: ThreadPassive)
+
 # Bestiary-related events
 @warning_ignore("unused_signal")
 signal bestiary_exited
