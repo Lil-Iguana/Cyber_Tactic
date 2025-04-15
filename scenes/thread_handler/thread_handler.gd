@@ -20,7 +20,7 @@ func activate_threads_by_type(type: ThreadPassive.Type) -> void:
 		
 	var thread_queue: Array[ThreadUI] = _get_all_thread_ui_nodes().filter(
 		func(thread_ui: ThreadUI):
-			return thread_ui.relic.type == type
+			return thread_ui.thread_passive.type == type
 	)
 	if thread_queue.is_empty():
 		threads_activated.emit(type)
