@@ -15,6 +15,7 @@ const BESTIARY_SCENE := preload("res://scenes/bestiary/bestiary.tscn")
 @onready var health_ui: HealthUI = %HealthUI
 @onready var gold_ui: GoldUI = %GoldUI
 @onready var thread_handler: ThreadHandler = %ThreadHandler
+@onready var thread_tooltip: ThreadTooltip = %ThreadTooltip
 @onready var deck_button: CardPileOpener = %DeckButton
 @onready var deck_view: CardPileView = %DeckView
 
@@ -94,7 +95,10 @@ func _setup_top_bar():
 	character.stats_changed.connect(health_ui.update_stats.bind(character))
 	health_ui.update_stats(character)
 	gold_ui.run_stats = stats
+	
 	thread_handler.add_thread(character.starting_thread)
+	Events.thread_tooltip_requested.connect(thread_tooltip.show_tooltip)
+	
 	deck_button.card_pile = character.deck
 	deck_view.card_pile = character.deck
 	deck_button.pressed.connect(deck_view.show_current_view.bind("Deck"))

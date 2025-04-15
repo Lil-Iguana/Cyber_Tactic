@@ -12,5 +12,5 @@ type = 3
 character_type = 2
 starter_thread = true
 icon = ExtResource("1_3mubc")
-tooltip = "[color=\\\"ffdf00\\\"]Break Time[/color]
+tooltip = "[color=\"#FFFF00\"]Break Time[/color]
 At the end of combat, heal 6 HP."
