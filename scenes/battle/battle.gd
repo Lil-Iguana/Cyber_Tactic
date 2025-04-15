@@ -35,7 +35,7 @@ func start_battle() -> void:
 
 
 func _on_enemies_child_order_changed() -> void:
-	if enemy_handler.get_child_count() == 0:
+	if enemy_handler.get_child_count() == 0 and is_instance_valid(threads):
 		threads.activate_threads_by_type(ThreadPassive.Type.END_OF_COMBAT)
 
 
