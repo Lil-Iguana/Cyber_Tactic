@@ -21,7 +21,7 @@ func _ready() -> void:
 	right_button.pressed.connect(_on_right_button_pressed)
 	
 	for thread_ui: ThreadUI in threads.get_children():
-		thread_ui.queue_free()
+		thread_ui.free()
 	
 	threads.child_order_changed.connect(_on_threads_child_order_changed)
 
