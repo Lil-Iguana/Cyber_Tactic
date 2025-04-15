@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c65soght4j8py" path="res://art/tile_0087.png" id="1_rgx6i"]
 [ext_resource type="Resource" uid="uid://ceybpc07sti3p" path="res://characters/warrior/warrior_draftable_cards.tres" id="2_57hcw"]
 [ext_resource type="Resource" uid="uid://cowpt7h8htwl" path="res://characters/warrior/warrior_starting_deck.tres" id="3_edb7b"]
-[ext_resource type="Resource" uid="uid://44a423e8clh1" path="res://threads/extra_energy.tres" id="5_tf1eh"]
+[ext_resource type="Resource" uid="uid://cwxlm3oyg546w" path="res://threads/kabluey.tres" id="5_ph178"]
 
 [resource]
 script = ExtResource("1_px33x")
@@ -15,7 +15,7 @@ starting_deck = ExtResource("3_edb7b")
 draftable_cards = ExtResource("2_57hcw")
 cards_per_turn = 4
 max_mana = 3
-starting_thread = ExtResource("5_tf1eh")
+starting_thread = ExtResource("5_ph178")
 max_health = 35
 art = ExtResource("1_rgx6i")
 tooltip_text = ""
