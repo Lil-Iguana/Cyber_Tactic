@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="ThreadPassive" load_steps=3 format=3 uid="uid://cwxlm3oyg546w"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cwxlm3oyg546w"]
 
-[ext_resource type="Script" path="res://custom_resources/thread_passive.gd" id="1_52wpo"]
 [ext_resource type="Texture2D" uid="uid://hmpqosvuxwib" path="res://art/tile_0107.png" id="1_qlntc"]
+[ext_resource type="Script" path="res://threads/kabluey.gd" id="2_3hrbo"]
 
 [resource]
-script = ExtResource("1_52wpo")
+script = ExtResource("2_3hrbo")
+damage = 2
 thread_name = "Kabluey"
 id = "kabluey"
 type = 0
