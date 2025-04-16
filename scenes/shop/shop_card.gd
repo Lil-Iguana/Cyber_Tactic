@@ -11,6 +11,8 @@ const CARD_MENU_UI = preload("res://scenes/ui/card_menu_ui.tscn")
 @onready var buy_button: Button = %BuyButton
 @onready var gold_cost := randi_range(100, 300)
 
+var current_card_ui: CardMenuUI
+
 
 func update(run_stats: RunStats) -> void:
 	if not card_container or not price or not buy_button:
@@ -38,6 +40,7 @@ func set_card(new_card: Card) -> void:
 	var new_card_menu_ui := CARD_MENU_UI.instantiate() as CardMenuUI
 	card_container.add_child(new_card_menu_ui)
 	new_card_menu_ui.card = card
+	current_card_ui = new_card_menu_ui
 
 
 func _on_buy_button_pressed() -> void:
