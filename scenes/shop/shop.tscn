@@ -172,3 +172,5 @@ layout_mode = 2
 [node name="CardTooltipPopUp" parent="UILayer" instance=ExtResource("6_p3200")]
 unique_name_in_owner = true
 visible = false
+
+[connection signal="pressed" from="UILayer/BackButton" to="." method="_on_back_button_pressed"]
