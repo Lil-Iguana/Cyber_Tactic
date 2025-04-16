@@ -1,6 +1,56 @@
-[gd_scene load_steps=2 format=3 uid="uid://c8006h0o0nmgw"]
+[gd_scene load_steps=9 format=3 uid="uid://c8006h0o0nmgw"]
 
 [ext_resource type="Script" path="res://scenes/shop/shop.gd" id="1_qxddl"]
+[ext_resource type="Texture2D" uid="uid://c058pylbagr4t" path="res://art/tile_0086.png" id="2_063ck"]
+[ext_resource type="Texture2D" uid="uid://bww55fdwfblxx" path="res://art/shopkeeper_blink.png" id="3_ho6rr"]
+
+[sub_resource type="Gradient" id="Gradient_bdoxw"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0.00392157, 0.486275, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jvmkg"]
+gradient = SubResource("Gradient_bdoxw")
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
+metadata/_snap_enabled = true
+metadata/_snap_count = 8
+
+[sub_resource type="Animation" id="Animation_vbb02"]
+resource_name = "blink"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shopkeeper:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_ho6rr"), ExtResource("2_063ck")]
+}
+
+[sub_resource type="Animation" id="Animation_wg284"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shopkeeper:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_063ck")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3v51k"]
+_data = {
+"RESET": SubResource("Animation_wg284"),
+"blink": SubResource("Animation_vbb02")
+}
 
 [node name="Shop" type="Control"]
 layout_mode = 3
@@ -12,39 +62,41 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_qxddl")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="Background" type="TextureRect" parent="BackgroundLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 0.568627)
+texture = SubResource("GradientTexture2D_jvmkg")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="DecorationLayer" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "Shop
-"
-horizontal_alignment = 1
+[node name="Shopkeeper" type="TextureRect" parent="DecorationLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -91.0
+offset_right = 90.0
+offset_bottom = -11.0
+grow_vertical = 0
+texture = ExtResource("2_063ck")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="Button" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 13)
-layout_mode = 2
-text = "Back"
+[node name="ShopkeeperAnimation" type="AnimationPlayer" parent="DecorationLayer"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_3v51k")
+}
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[node name="BlinkTimer" type="Timer" parent="DecorationLayer"]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+layer = 2
