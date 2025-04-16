@@ -9,6 +9,7 @@ font = ExtResource("2_vr56u")
 font_size = 6
 
 [node name="ShopCard" type="VBoxContainer"]
+custom_minimum_size = Vector2(40, 57)
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/separation = 2
