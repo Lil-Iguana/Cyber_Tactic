@@ -122,6 +122,7 @@ func _on_shop_entered() -> void:
 	shop.char_stats = character
 	shop.run_stats = stats
 	shop.thread_handler = thread_handler
+	Events.shop_entered.emit(shop)
 	shop.populate_shop()
 
 

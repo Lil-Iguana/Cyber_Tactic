@@ -56,11 +56,13 @@ signal map_exited
 
 # Shop-related events
 @warning_ignore("unused_signal")
+signal shop_entered(room: Room)
+@warning_ignore("unused_signal")
 signal shop_thread_bought(thread: ThreadPassive, gold_cost: int)
 @warning_ignore("unused_signal")
 signal shop_card_bought(card: Card, gold_cost: int)
 @warning_ignore("unused_signal")
-signal shop_exited(room: Room)
+signal shop_exited
 
 # Campfire-related events
 @warning_ignore("unused_signal")
