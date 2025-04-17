@@ -1,14 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4levpjon1c5s"]
+[gd_scene load_steps=6 format=3 uid="uid://c4levpjon1c5s"]
 
 [ext_resource type="Script" path="res://scenes/shop/shop_card.gd" id="1_5q1iu"]
 [ext_resource type="PackedScene" uid="uid://rsk8d12egnnf" path="res://scenes/ui/card_menu_ui.tscn" id="1_alfhh"]
 [ext_resource type="Resource" uid="uid://kyu5l54a2ljg" path="res://characters/warrior/cards/student_cybersword_slash.tres" id="2_4ldbr"]
 [ext_resource type="FontFile" uid="uid://7ucfniysa1ko" path="res://art/Font Styles/pixel_rpg.ttf" id="2_vr56u"]
 [ext_resource type="Texture2D" uid="uid://c4hcddu2md8wb" path="res://art/Cache10.png" id="5_jhj4o"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_kft4l"]
-font = ExtResource("2_vr56u")
-font_size = 6
 
 [node name="ShopCard" type="VBoxContainer"]
 custom_minimum_size = Vector2(40, 57)
@@ -34,8 +30,9 @@ alignment = 1
 [node name="PriceLabel" type="Label" parent="Price"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vr56u")
+theme_override_font_sizes/font_size = 6
 text = "999"
-label_settings = SubResource("LabelSettings_kft4l")
 
 [node name="GoldIcon" type="TextureRect" parent="Price"]
 custom_minimum_size = Vector2(10, 10)
