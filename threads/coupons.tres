@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="ThreadPassive" load_steps=3 format=3 uid="uid://hmap8l86svk1"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://hmap8l86svk1"]
 
-[ext_resource type="Script" path="res://custom_resources/thread_passive.gd" id="1_aq8e7"]
 [ext_resource type="Texture2D" uid="uid://njncvtqmx2eb" path="res://art/relic_coupons.png" id="1_g3klo"]
+[ext_resource type="Script" path="res://threads/coupons.gd" id="2_qllxv"]
 
 [resource]
-script = ExtResource("1_aq8e7")
+script = ExtResource("2_qllxv")
+discount = 50
 thread_name = "Coupons"
 id = "coupons"
 type = 4
