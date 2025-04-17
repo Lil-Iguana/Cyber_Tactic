@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c8006h0o0nmgw"]
+[gd_scene load_steps=14 format=3 uid="uid://c8006h0o0nmgw"]
 
 [ext_resource type="Script" path="res://scenes/shop/shop.gd" id="1_qxddl"]
 [ext_resource type="Texture2D" uid="uid://c058pylbagr4t" path="res://art/tile_0086.png" id="2_063ck"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://d3fuaowohtamf" path="res://art/Font Styles/PressStart2P-Regular.ttf" id="4_a2yby"]
 [ext_resource type="PackedScene" uid="uid://c4levpjon1c5s" path="res://scenes/shop/shop_card.tscn" id="5_npuc3"]
 [ext_resource type="PackedScene" uid="uid://istosvrl2ng1" path="res://scenes/ui/card_tooltip_pop_up.tscn" id="6_p3200"]
+[ext_resource type="PackedScene" uid="uid://b2fri1atjmojb" path="res://scenes/shop/shop_thread.tscn" id="6_tgpmw"]
 
 [sub_resource type="Gradient" id="Gradient_bdoxw"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0.00392157, 0.486275, 1)
@@ -115,9 +116,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 25.0
-offset_top = -42.0
+offset_top = -52.0
 offset_right = 65.0
-offset_bottom = -29.0
+offset_bottom = -39.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Shop"
@@ -145,9 +146,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_top = -29.0
-offset_right = 89.0
-offset_bottom = 32.0
+offset_left = -30.5
+offset_top = -37.0
+offset_right = 119.5
+offset_bottom = 67.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -167,6 +169,16 @@ layout_mode = 2
 
 [node name="Threads" type="HBoxContainer" parent="UILayer/ShopContent"]
 unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="ShopThread" parent="UILayer/ShopContent/Threads" instance=ExtResource("6_tgpmw")]
+layout_mode = 2
+
+[node name="ShopThread2" parent="UILayer/ShopContent/Threads" instance=ExtResource("6_tgpmw")]
+layout_mode = 2
+
+[node name="ShopThread3" parent="UILayer/ShopContent/Threads" instance=ExtResource("6_tgpmw")]
 layout_mode = 2
 
 [node name="CardTooltipPopUp" parent="UILayer" instance=ExtResource("6_p3200")]
