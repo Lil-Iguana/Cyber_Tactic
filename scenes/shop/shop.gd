@@ -11,6 +11,8 @@ const SHOP_THREAD = preload("res://scenes/shop/shop_thread.tscn")
 
 @onready var cards: HBoxContainer = %Cards
 @onready var threads: HBoxContainer = %Threads
+@onready var shop_keeper_animation: AnimationPlayer = %ShopkeeperAnimation
+@onready var blink_timer: Timer = %BlinkTimer
 @onready var card_tooltip_popup: CardTooltipPopup = %CardTooltipPopUp
 
 
@@ -23,6 +25,9 @@ func _ready() -> void:
 	
 	Events.shop_card_bought.connect(_on_shop_card_bought)
 	Events.shop_thread_bought.connect(_on_shop_thread_bought)
+	
+	_blink_timer_setup()
+	blink_timer.timeout.connect(_on_blink_timer_timeout)
 
 
 func _input(event: InputEvent) -> void:
@@ -33,6 +38,11 @@ func _input(event: InputEvent) -> void:
 func populate_shop() -> void:
 	_generate_shop_cards()
 	_generate_shop_threads()
+
+
+func _blink_timer_setup() -> void:
+	blink_timer.wait_time = randf_range(1.0, 5.0)
+	blink_timer.start()
 
 
 func _generate_shop_cards() -> void:
@@ -90,3 +100,8 @@ func _on_shop_thread_bought(thread: ThreadPassive, gold_cost: int) -> void:
 	thread_handler.add_thread(thread)
 	run_stats.gold -= gold_cost
 	_update_items()
+
+
+func _on_blink_timer_timeout() -> void:
+	shop_keeper_animation.play("blink")
+	_blink_timer_setup()
