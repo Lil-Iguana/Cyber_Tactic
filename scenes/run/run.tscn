@@ -80,11 +80,13 @@ grow_horizontal = 2
 
 [node name="HealthUI" parent="TopBar/BarItems" instance=ExtResource("4_pv6hd")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(27, 0)
 layout_mode = 2
 show_max_hp = true
 
 [node name="GoldUI" parent="TopBar/BarItems" instance=ExtResource("4_y5dly")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(34, 0)
 layout_mode = 2
 
 [node name="ThreadHandlerContainer" type="CenterContainer" parent="TopBar/BarItems"]
