@@ -14,6 +14,7 @@ const SHOP_THREAD = preload("res://scenes/shop/shop_thread.tscn")
 @onready var shop_keeper_animation: AnimationPlayer = %ShopkeeperAnimation
 @onready var blink_timer: Timer = %BlinkTimer
 @onready var card_tooltip_popup: CardTooltipPopup = %CardTooltipPopUp
+@onready var modifier_handler: ModifierHandler = $ModifierHandler
 
 
 func _ready() -> void:
@@ -56,6 +57,7 @@ func _generate_shop_cards() -> void:
 		cards.add_child(new_shop_card)
 		new_shop_card.card = card
 		new_shop_card.current_card_ui.tooltip_requested.connect(card_tooltip_popup.show_tooltip)
+		new_shop_card.gold_cost = _get_updated_shop_cost(new_shop_card.gold_cost)
 		new_shop_card.update(run_stats)
 
 
@@ -75,6 +77,7 @@ func _generate_shop_threads() -> void:
 		var new_shop_thread := SHOP_THREAD.instantiate() as ShopThread
 		threads.add_child(new_shop_thread)
 		new_shop_thread.thread = thread
+		new_shop_thread.gold_cost = _get_updated_shop_cost(new_shop_thread.gold_cost)
 		new_shop_thread.update(run_stats)
 
 
@@ -84,6 +87,10 @@ func _update_items() -> void:
 
 	for shop_thread: ShopThread in threads.get_children():
 		shop_thread.update(run_stats)
+
+
+func _get_updated_shop_cost(original_cost: int) -> int:
+	return modifier_handler.get_modified_value(original_cost, Modifier.Type.SHOP_COST)
 
 
 func _on_back_button_pressed() -> void:
