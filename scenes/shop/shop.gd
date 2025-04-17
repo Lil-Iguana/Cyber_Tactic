@@ -1,13 +1,28 @@
 class_name Shop
 extends Control
 
+const SHOP_CARD = preload("res://scenes/shop/shop_card.tscn")
+const SHOP_THREAD = preload("res://scenes/shop/shop_thread.tscn")
+
+@export var shop_threads: Array[ThreadPassive]
+@export var char_stats: CharacterStats
+@export var run_stats: RunStats
+@export var thread_handler: ThreadHandler
+
 @onready var cards: HBoxContainer = %Cards
+@onready var threads: HBoxContainer = %Threads
 @onready var card_tooltip_popup: CardTooltipPopup = %CardTooltipPopUp
 
 
 func _ready() -> void:
 	for shop_card: ShopCard in cards.get_children():
-		shop_card.current_card_ui.tooltip_requested.connect(card_tooltip_popup.show_tooltip)
+		shop_card.queue_free()
+		
+	for shop_thread: ShopThread in threads.get_children():
+		shop_thread.queue_free()
+	
+	Events.shop_card_bought.connect(_on_shop_card_bought)
+	Events.shop_thread_bought.connect(_on_shop_thread_bought)
 
 
 func _input(event: InputEvent) -> void:
@@ -15,5 +30,63 @@ func _input(event: InputEvent) -> void:
 		card_tooltip_popup.hide_tooltip()
 
 
+func populate_shop() -> void:
+	_generate_shop_cards()
+	_generate_shop_threads()
+
+
+func _generate_shop_cards() -> void:
+	var shop_card_array: Array[Card] = []
+	var available_cards := char_stats.draftable_cards.cards.duplicate(true)
+	available_cards.shuffle()
+	shop_card_array = available_cards.slice(0, 3)
+	
+	for card: Card in shop_card_array:
+		var new_shop_card := SHOP_CARD.instantiate() as ShopCard
+		cards.add_child(new_shop_card)
+		new_shop_card.card = card
+		new_shop_card.current_card_ui.tooltip_requested.connect(card_tooltip_popup.show_tooltip)
+		new_shop_card.update(run_stats)
+
+
+func _generate_shop_threads() -> void:
+	var shop_threads_array: Array[ThreadPassive] = []
+	var available_threads := shop_threads.filter(
+		func(thread: ThreadPassive):
+			var can_appear := thread.can_appear_as_reward(char_stats)
+			var already_had_it := thread_handler.has_thread(thread.id)
+			return can_appear and not already_had_it
+	)
+	
+	available_threads.shuffle()
+	shop_threads_array = available_threads.slice(0, 3)
+	
+	for thread: ThreadPassive in shop_threads_array:
+		var new_shop_thread := SHOP_THREAD.instantiate() as ShopThread
+		threads.add_child(new_shop_thread)
+		new_shop_thread.thread = thread
+		new_shop_thread.update(run_stats)
+
+
+func _update_items() -> void:
+	for shop_card: ShopCard in cards.get_children():
+		shop_card.update(run_stats)
+
+	for shop_thread: ShopThread in threads.get_children():
+		shop_thread.update(run_stats)
+
+
 func _on_back_button_pressed() -> void:
 	Events.shop_exited.emit()
+
+
+func _on_shop_card_bought(card: Card, gold_cost: int) -> void:
+	char_stats.deck.add_card(card)
+	run_stats.gold -= gold_cost
+	_update_items()
+
+
+func _on_shop_thread_bought(thread: ThreadPassive, gold_cost: int) -> void:
+	thread_handler.add_thread(thread)
+	run_stats.gold -= gold_cost
+	_update_items()
