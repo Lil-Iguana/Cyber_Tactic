@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c8006h0o0nmgw"]
+[gd_scene load_steps=21 format=3 uid="uid://c8006h0o0nmgw"]
 
 [ext_resource type="Script" path="res://scenes/shop/shop.gd" id="1_qxddl"]
 [ext_resource type="Texture2D" uid="uid://c058pylbagr4t" path="res://art/tile_0086.png" id="2_063ck"]
@@ -12,6 +12,8 @@
 [ext_resource type="Resource" uid="uid://c014g8rpo2k1t" path="res://threads/reinforced_block.tres" id="6_kcjqd"]
 [ext_resource type="PackedScene" uid="uid://istosvrl2ng1" path="res://scenes/ui/card_tooltip_pop_up.tscn" id="6_p3200"]
 [ext_resource type="PackedScene" uid="uid://b2fri1atjmojb" path="res://scenes/shop/shop_thread.tscn" id="6_tgpmw"]
+[ext_resource type="PackedScene" uid="uid://bb71f8mjtb5fh" path="res://scenes/modifier_handler/modifier_handler.tscn" id="13_dqlyb"]
+[ext_resource type="PackedScene" uid="uid://0nnepaeuhgih" path="res://scenes/modifier_handler/modifier.tscn" id="14_w60y6"]
 
 [sub_resource type="Gradient" id="Gradient_bdoxw"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0.00392157, 0.486275, 1)
@@ -190,5 +192,10 @@ layout_mode = 2
 [node name="CardTooltipPopUp" parent="UILayer" instance=ExtResource("6_p3200")]
 unique_name_in_owner = true
 visible = false
+
+[node name="ModifierHandler" parent="." instance=ExtResource("13_dqlyb")]
+
+[node name="ShopCostModifier" parent="ModifierHandler" instance=ExtResource("14_w60y6")]
+type = 4
 
 [connection signal="pressed" from="UILayer/BackButton" to="." method="_on_back_button_pressed"]
