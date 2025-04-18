@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1luu5u334kps"]
+[gd_scene load_steps=8 format=3 uid="uid://d1luu5u334kps"]
 
 [ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_31s36"]
 [ext_resource type="Script" path="res://enemies_stats/toxic_ghost/toxic_muscle_buff_action.gd" id="2_hje63"]
 [ext_resource type="Texture2D" uid="uid://pgnrffkpyidd" path="res://art/tile_0127.png" id="3_wgnq7"]
 [ext_resource type="Script" path="res://custom_resources/intent.gd" id="4_3fyun"]
 [ext_resource type="AudioStream" uid="uid://cd0601td0wexj" path="res://art/enemy_block.wav" id="5_03teb"]
+[ext_resource type="Script" path="res://enemies_stats/toxic_ghost/toxic_ghost_attack_action.gd" id="6_6b6ny"]
 
 [sub_resource type="Resource" id="Resource_bpmco"]
 script = ExtResource("4_3fyun")
@@ -20,5 +21,6 @@ intent = SubResource("Resource_bpmco")
 sound = ExtResource("5_03teb")
 
 [node name="AttackAction" type="Node" parent="."]
+script = ExtResource("6_6b6ny")
 
 [node name="BlockAction" type="Node" parent="."]
