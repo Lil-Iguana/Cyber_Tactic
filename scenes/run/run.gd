@@ -7,6 +7,7 @@ const CAMPFIRE_SCENE := preload("res://scenes/campfire/campfire.tscn")
 const SHOP_SCENE := preload("res://scenes/shop/shop.tscn")
 const TREASURE_SCENE := preload("res://scenes/treasure/treasure.tscn")
 const BESTIARY_SCENE := preload("res://scenes/bestiary/bestiary.tscn")
+const WIN_SCREEN_SCENE := preload("res://scenes/win_screen/win_screen.tscn")
 
 @export var run_startup: RunStartup
 
