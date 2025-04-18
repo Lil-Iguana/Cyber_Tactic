@@ -122,8 +122,8 @@ func _on_shop_thread_bought(thread: ThreadPassive, gold_cost: int) -> void:
 		var coupons_thread := thread as CouponsThread
 		coupons_thread.add_shop_modifier(self)
 		_update_item_costs()
-	
-	_update_items()
+	else:
+		_update_items()
 
 
 func _on_blink_timer_timeout() -> void:
