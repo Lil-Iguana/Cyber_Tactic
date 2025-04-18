@@ -74,7 +74,7 @@ signal battle_reward_exited
 
 # Treasure Room-related events
 @warning_ignore("unused_signal")
-signal treasure_room_exited
+signal treasure_room_exited(found_thread: ThreadPassive)
 
 # Thread-related events
 @warning_ignore("unused_signal")
