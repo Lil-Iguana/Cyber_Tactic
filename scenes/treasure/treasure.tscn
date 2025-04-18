@@ -188,6 +188,7 @@ offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(20, 20)
+mouse_filter = 0
 texture = ExtResource("3_p583m")
 stretch_mode = 5
 
