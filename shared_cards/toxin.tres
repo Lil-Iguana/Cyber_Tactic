@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://djdrm0hdg5b23"]
+
+[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_v0oho"]
+
+[resource]
+script = ExtResource("1_v0oho")
+name = "Toxin"
+id = "toxin"
+type = 1
+rarity = 0
+target = 0
+cost = 1
+remove = true
+tooltip_text = ""
