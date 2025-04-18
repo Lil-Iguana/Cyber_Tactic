@@ -1,11 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://da6ocx485g0c7"]
+[gd_scene load_steps=21 format=3 uid="uid://da6ocx485g0c7"]
 
 [ext_resource type="Script" path="res://scenes/treasure/treasure.gd" id="1_xmwdt"]
+[ext_resource type="Script" path="res://custom_resources/thread_passive.gd" id="2_3ynfn"]
 [ext_resource type="Texture2D" uid="uid://cnjjfxn6hrai3" path="res://art/background.png" id="2_fpb8l"]
+[ext_resource type="Resource" uid="uid://cwxlm3oyg546w" path="res://threads/kabluey.tres" id="3_72l3w"]
 [ext_resource type="Texture2D" uid="uid://dbt36pxssl5iw" path="res://art/tile_0089.png" id="3_p583m"]
 [ext_resource type="Texture2D" uid="uid://dnudqtw3tv2h7" path="res://art/Cache16.png" id="4_hk1q6"]
+[ext_resource type="Resource" uid="uid://44a423e8clh1" path="res://threads/extra_energy.tres" id="4_knoyn"]
 [ext_resource type="Texture2D" uid="uid://bceuqyw50fdpi" path="res://art/tile_0090.png" id="4_o8ugj"]
 [ext_resource type="Texture2D" uid="uid://bl74ak1f0n8cg" path="res://art/tile_0091.png" id="5_2qnwf"]
+[ext_resource type="Resource" uid="uid://c014g8rpo2k1t" path="res://threads/reinforced_block.tres" id="5_ypb2i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5bk8g"]
 font_size = 32
@@ -135,6 +139,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_xmwdt")
+treasure_thread_pool = Array[ExtResource("2_3ynfn")]([ExtResource("3_72l3w"), ExtResource("4_knoyn"), ExtResource("5_ypb2i")])
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
