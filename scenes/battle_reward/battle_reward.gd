@@ -36,11 +36,14 @@ func add_gold_reward(amount: int) -> void:
 
 
 func add_thread_award(thread: ThreadPassive) -> void:
-	var thread_award := REWARD_BUTTON.instantiate() as RewardButton
-	thread_award.reward_icon = thread.icon
-	thread_award.reward_text = thread.thread_name
-	thread_award.pressed.connect(_on_thread_reward_taken.bind(thread))
-	rewards.add_child.call_deferred(thread_award)
+	if not thread:
+		return
+
+	var thread_reward := REWARD_BUTTON.instantiate() as RewardButton
+	thread_reward.reward_icon = thread.icon
+	thread_reward.reward_text = thread.thread_name
+	thread_reward.pressed.connect(_on_thread_reward_taken.bind(thread))
+	rewards.add_child.call_deferred(thread_reward)
 
 
 func add_card_reward() -> void:
