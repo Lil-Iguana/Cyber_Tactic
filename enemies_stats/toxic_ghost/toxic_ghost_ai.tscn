@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1luu5u334kps"]
+
+[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_31s36"]
+[ext_resource type="Script" path="res://enemies_stats/toxic_ghost/toxic_muscle_buff_action.gd" id="2_hje63"]
+
+[node name="ToxicGhostAI" type="Node"]
+script = ExtResource("1_31s36")
+
+[node name="MuscleBuffAction" type="Node" parent="."]
+script = ExtResource("2_hje63")
+
+[node name="AttackAction" type="Node" parent="."]
+
+[node name="BlockAction" type="Node" parent="."]
