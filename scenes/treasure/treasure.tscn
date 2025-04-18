@@ -193,6 +193,7 @@ texture = ExtResource("3_p583m")
 stretch_mode = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TreasureChest"]
+unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_u5neh")
 }
@@ -207,3 +208,5 @@ texture = ExtResource("4_hk1q6")
 lifetime = 1.5
 one_shot = true
 explosiveness = 0.9
+
+[connection signal="gui_input" from="TreasureChest" to="." method="_on_treasure_chest_gui_input"]
