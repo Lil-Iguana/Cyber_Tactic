@@ -89,6 +89,17 @@ func _update_items() -> void:
 		shop_thread.update(run_stats)
 
 
+func _update_item_costs() -> void:
+	for shop_card: ShopCard in cards.get_children():
+		shop_card.gold_cost = _get_updated_shop_cost(shop_card.gold_cost)
+		shop_card.update(run_stats)
+
+	for shop_thread: ShopThread in threads.get_children():
+		shop_thread.gold_cost = _get_updated_shop_cost(shop_thread.gold_cost)
+		shop_thread.update(run_stats)
+
+
+
 func _get_updated_shop_cost(original_cost: int) -> int:
 	return modifier_handler.get_modified_value(original_cost, Modifier.Type.SHOP_COST)
 
@@ -106,6 +117,12 @@ func _on_shop_card_bought(card: Card, gold_cost: int) -> void:
 func _on_shop_thread_bought(thread: ThreadPassive, gold_cost: int) -> void:
 	thread_handler.add_thread(thread)
 	run_stats.gold -= gold_cost
+	
+	if thread is CouponsThread:
+		var coupons_thread := thread as CouponsThread
+		coupons_thread.add_shop_modifier(self)
+		_update_item_costs()
+	
 	_update_items()
 
 

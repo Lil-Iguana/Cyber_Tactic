@@ -3,17 +3,20 @@ extends ThreadPassive
 
 @export_range(1, 100) var discount := 50
 
+var thread_ui: ThreadUI
+
 
 func initialize_thread(owner: ThreadUI) -> void:
-	Events.shop_entered.connect(add_shop_modifier.bind(owner))
+	Events.shop_entered.connect(add_shop_modifier)
+	thread_ui = owner
 
 
 func deactivate_thread(_owner: ThreadUI) -> void:
 	Events.shop_entered.disconnect(add_shop_modifier)
 
 
-func add_shop_modifier(shop: Shop, owner: ThreadUI) -> void:
-	owner.flash()
+func add_shop_modifier(shop: Shop) -> void:
+	thread_ui.flash()
 	
 	var shop_cost_modifier := shop.modifier_handler.get_modifier(Modifier.Type.SHOP_COST)
 	assert(shop_cost_modifier, "No shop cost modifier in shop!")
