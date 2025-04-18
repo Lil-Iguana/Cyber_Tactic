@@ -10,6 +10,7 @@ const CARD_TEXT := "Add New Card"
 
 @export var run_stats: RunStats
 @export var character_stats: CharacterStats
+@export var thread_handler: ThreadHandler
 
 @onready var rewards: VBoxContainer = %Rewards
 
@@ -32,6 +33,14 @@ func add_gold_reward(amount: int) -> void:
 	gold_reward.reward_text = GOLD_TEXT % amount
 	gold_reward.pressed.connect(_on_gold_reward_taken.bind(amount))
 	rewards.add_child.call_deferred(gold_reward)
+
+
+func add_thread_award(thread: ThreadPassive) -> void:
+	var thread_award := REWARD_BUTTON.instantiate() as RewardButton
+	thread_award.reward_icon = thread.icon
+	thread_award.reward_text = thread.thread_name
+	thread_award.pressed.connect(_on_thread_reward_taken.bind(thread))
+	rewards.add_child.call_deferred(thread_award)
 
 
 func add_card_reward() -> void:
@@ -104,6 +113,12 @@ func _on_card_reward_taken(card: Card) -> void:
 		
 	character_stats.deck.add_card(card)
 
+
+func _on_thread_reward_taken(thread: ThreadPassive) -> void:
+	if not thread or not thread_handler:
+		return
+	
+	thread_handler.add_thread(thread)
 
 
 func _on_back_button_pressed() -> void:
