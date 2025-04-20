@@ -28,8 +28,17 @@ func start_battle(char_stats: CharacterStats) -> void:
 	character.draw_pile = character.deck.duplicate(true)
 	character.draw_pile.shuffle()
 	character.discard = CardPile.new()
+	
+	if threads.threads_activated.is_connected(_on_threads_activated):
+		threads.threads_activated.disconnect(_on_threads_activated)
+		
 	threads.threads_activated.connect(_on_threads_activated)
+	
+	if player.status_handler.statuses_applied.is_connected(_on_statuses_applied):
+		player.status_handler.statuses_applied.disconnect(_on_statuses_applied)
+		
 	player.status_handler.statuses_applied.connect(_on_statuses_applied)
+	
 	start_turn()
 
 
